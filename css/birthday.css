@@ -37,14 +37,14 @@
   height: auto;
 }
 
-/* confetti overlay - aligned to the square mobile banner, sized a touch
-   taller/wider so it has room to travel without exposing its edges */
+/* confetti overlay - sits 1:1 over the square mobile banner (same scale as
+   the source PNG) so all of its pieces show at their designed positions.
+   js/hero-parallax.js translates it down on scroll for the falling effect. */
 .hero-banner__confetti {
   position: absolute;
-  left: -4%;
-  top: -10%;
-  width: 108%;
-  height: 120%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
   object-fit: cover;
   pointer-events: none;
