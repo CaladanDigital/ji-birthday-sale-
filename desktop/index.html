@@ -7,11 +7,10 @@
   <meta name="description" content="Our biggest sale of the year. 20% off sitewide, including subscriptions — lock in 20% for life. Shop Karalyn's favorite preset bundles. July 21–27." />
   <link rel="icon" href="../assets/images/favicon.svg" />
 
-  <!-- Fonts: Fraunces (display) + Josefin Sans (body) inherited from the brand
-       system; Fredoka adds the chunky rounded headline used on the sale banner -->
+  <!-- Fonts: Fraunces (display) + Josefin Sans (body) from the brand system -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Fredoka:wght@500;600;700&family=Josefin+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Josefin+Sans:wght@400;500;600;700&display=swap" />
 
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/base.css" />
@@ -111,22 +110,19 @@
 
   <main id="main">
 
-    <!-- ===== Hero banner (two parallax layers: art + confetti) ===== -->
+    <!-- ===== Hero banner =====
+         Mobile: the square birthday graphic + a confetti overlay that falls
+         out of sync on scroll (js/hero-parallax.js).
+         Desktop (>=900px): the wide banner art swaps in via <picture>, and the
+         confetti overlay is hidden in CSS (confetti is baked into the wide art). -->
     <section class="hero-banner" id="heroBanner"
              aria-label="Just Ingredients Birthday Sale — 20% off sitewide, July 21 to 27">
-      <div class="hero-banner__art">
-        <div class="hero-banner__content">
-          <img class="hero-banner__logo" src="../assets/images/logo-white.png" alt="Just Ingredients" />
-          <p class="hero-banner__eyebrow">Our Biggest Sale of the Year</p>
-          <h1 class="hero-banner__title">Birthday<br />Sale</h1>
-          <div class="hero-banner__offer">
-            <span class="hero-banner__pct">20% Off</span>
-            <span class="hero-banner__sitewide">Sitewide</span>
-          </div>
-          <p class="hero-banner__dates">July 21st – 27th</p>
-        </div>
-      </div>
-      <img class="hero-banner__confetti" src="../assets/images/hero-confetti.svg" alt="" aria-hidden="true" />
+      <picture class="hero-banner__art">
+        <source media="(min-width: 900px)" srcset="../assets/images/hero-birthday-desktop.jpg" />
+        <img src="../assets/images/hero-birthday-mobile.png"
+             alt="Just Ingredients Birthday Sale — our biggest sale of the year, 20% off sitewide, July 21st to 27th" />
+      </picture>
+      <img class="hero-banner__confetti" src="../assets/images/hero-confetti.png" alt="" aria-hidden="true" />
     </section>
 
     <!-- ===== Karalyn's Favorites: preset bundles ===== -->
@@ -755,7 +751,6 @@
       var toD = document.getElementById('viewToggleDesktop');
       if (!preview || !frame) return;
       function showMobile() {
-        // lazy-load the iframe on first open (saves initial pageweight)
         if (!frame.src && frame.dataset.src) frame.src = frame.dataset.src;
         preview.hidden = false;
         body.classList.add('mobile-active');

@@ -1,15 +1,16 @@
 /* ============================================================
-   Hero confetti parallax
+   Hero confetti parallax (mobile)
 
-   Two stacked layers in #heroBanner: the banner art (.hero-banner__art)
-   and a confetti overlay (.hero-banner__confetti) that sits a little
-   taller than the hero so it has room to travel. They start aligned;
-   on scroll the confetti is translated DOWN faster than the banner, so
-   relative to the banner it drifts downward and reads as falling.
+   #heroBanner has the banner image and a confetti overlay
+   (.hero-banner__confetti) sized a little larger than the hero so it has
+   room to travel. The banner stays put; on scroll the confetti is
+   translated DOWN, so relative to the banner it drifts downward and reads
+   as gently falling. The overlay is hidden at >=900px (the desktop banner
+   has confetti baked in), so this is effectively a mobile effect.
 
-   rAF-throttled transform (not background-attachment: fixed, which
-   janks on iOS - and mobile is the priority). Fully disabled under
-   prefers-reduced-motion: the layers just stay put.
+   rAF-throttled transform (not background-attachment: fixed, which janks
+   on iOS - and mobile is the priority). Fully disabled under
+   prefers-reduced-motion: the confetti just stays put.
    ============================================================ */
 
 'use strict';
@@ -24,13 +25,11 @@
     return;
   }
   var confetti = hero.querySelector('.hero-banner__confetti');
-  var art = hero.querySelector('.hero-banner__art');
   if (!confetti) {
     return;
   }
 
-  var CONFETTI_RATE = 0.42;  /* confetti falls fast */
-  var ART_RATE = 0.10;       /* banner drifts gently the same way */
+  var CONFETTI_RATE = 0.4;  /* how fast the confetti falls relative to scroll */
   var ticking = false;
 
   function update() {
@@ -42,9 +41,6 @@
     }
     var scrolled = -rect.top; /* px the hero top has passed above the fold */
     confetti.style.transform = 'translate3d(0, ' + (scrolled * CONFETTI_RATE) + 'px, 0)';
-    if (art) {
-      art.style.transform = 'translate3d(0, ' + (scrolled * ART_RATE) + 'px, 0)';
-    }
   }
 
   function onScroll() {

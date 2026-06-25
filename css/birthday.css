@@ -9,12 +9,14 @@
    ============================================================ */
 
 /* ============================================================
-   1. Hero banner (the provided art, rebuilt as two parallax layers)
+   1. Hero banner (provided art)
    ------------------------------------------------------------
-   .hero-banner__art   = pink gradient + text/logo (the "background")
-   .hero-banner__confetti = transparent confetti, the layer that falls
-   To use a real exported image instead, replace .hero-banner__art's
-   inner markup with <img class="hero-banner__art" src="...banner.jpg">.
+   .hero-banner__art      = the banner image (square graphic on mobile,
+                            wide banner on desktop via <picture>)
+   .hero-banner__confetti = transparent confetti overlay, the layer that
+                            falls out of sync on scroll. MOBILE ONLY -
+                            the desktop banner already has confetti baked
+                            in, so the overlay is hidden at >=900px.
    ============================================================ */
 
 .hero-banner {
@@ -24,161 +26,36 @@
 }
 
 .hero-banner__art {
+  display: block;
   position: relative;
   z-index: 1;
-  min-height: 74vh;
-  max-height: 720px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 32px 24px 40px;
-  background: var(--grad-birthday);
-  will-change: transform;
 }
 
-.hero-banner__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  max-width: 560px;
-}
-
-.hero-banner__logo {
-  width: 132px;
+.hero-banner__art img {
+  display: block;
+  width: 100%;
   height: auto;
-  margin-bottom: 4px;
-  order: 1;
 }
 
-.hero-banner__eyebrow {
-  order: 2;
-  color: var(--color-white);
-  font-weight: var(--weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  font-size: 13px;
-}
-
-.hero-banner__title {
-  order: 3;
-  font-family: 'Fredoka', var(--font-display);
-  font-style: italic;
-  font-weight: 700;
-  font-variation-settings: normal;
-  color: var(--color-white);
-  text-transform: uppercase;
-  line-height: 0.92;
-  font-size: clamp(40px, 13.5vw, 96px);
-  letter-spacing: -0.015em;
-  text-shadow: 4px 5px 0 rgba(236, 28, 109, 0.55);
-}
-
-.hero-banner__offer {
-  order: 4;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  background: var(--color-white);
-  border-radius: 22px;
-  padding: 16px 44px 14px;
-  margin-top: 6px;
-  box-shadow: 0 10px 24px rgba(180, 20, 70, 0.18);
-}
-
-.hero-banner__pct {
-  font-family: 'Fredoka', var(--font-display);
-  font-style: italic;
-  font-weight: 700;
-  font-variation-settings: normal;
-  color: var(--color-pink);
-  font-size: clamp(34px, 11vw, 52px);
-  line-height: 1;
-}
-
-.hero-banner__sitewide {
-  color: var(--color-pink);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 13px;
-  font-weight: var(--weight-semibold);
-}
-
-.hero-banner__dates {
-  order: 5;
-  background: var(--color-pink);
-  color: var(--color-white);
-  font-weight: var(--weight-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 17px;
-  padding: 11px 28px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 8px 18px rgba(180, 20, 70, 0.22);
-}
-
-/* confetti overlay - taller than the hero so it has travel room */
+/* confetti overlay - aligned to the square mobile banner, sized a touch
+   taller/wider so it has room to travel without exposing its edges */
 .hero-banner__confetti {
   position: absolute;
-  left: -6%;
-  top: -16%;
-  width: 112%;
-  height: 132%;
+  left: -4%;
+  top: -10%;
+  width: 108%;
+  height: 120%;
   z-index: 2;
   object-fit: cover;
   pointer-events: none;
   will-change: transform;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .hero-banner__confetti {
-    animation: confetti-bob 9s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes confetti-bob {
-  from { translate: 0 -6px; }
-  to   { translate: 0 6px; }
-}
-
-/* --- desktop: wide banner, drop the logo + 20% card (header carries them).
+/* --- desktop (>=900px): wide banner, hide the separate confetti layer.
    900px matches the SIS desktop breakpoint + carousel.js static threshold. --- */
 @media (min-width: 900px) {
-  .hero-banner__art {
-    min-height: 0;
-    height: 360px;
-    max-height: none;
-    padding: 0 56px;
-  }
-
-  .hero-banner__content {
-    max-width: var(--frame-desktop);
-    gap: 10px;
-  }
-
-  .hero-banner__logo,
-  .hero-banner__offer {
+  .hero-banner__confetti {
     display: none;
-  }
-
-  .hero-banner__title {
-    order: 1;
-    font-size: clamp(80px, 11vw, 150px);
-    text-shadow: 5px 6px 0 rgba(236, 28, 109, 0.5);
-  }
-
-  .hero-banner__eyebrow {
-    order: 2;
-    font-size: clamp(18px, 2.2vw, 30px);
-    letter-spacing: 0.2em;
-  }
-
-  .hero-banner__dates {
-    order: 3;
-    font-size: 20px;
-    margin-top: 6px;
   }
 }
 
