@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday Sale | Just Ingredients</title>
+  <meta name="description" content="Our biggest sale of the year. 20% off sitewide, including subscriptions — lock in 20% for life. Shop Karalyn's favorite preset bundles. July 21–27." />
+  <link rel="icon" href="assets/images/favicon.svg" />
+
+  <!-- Fonts: Fraunces (display) + Josefin Sans (body) inherited from the brand
+       system; Fredoka adds the chunky rounded headline used on the sale banner -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Fredoka:wght@500;600;700&family=Josefin+Sans:wght@400;500;600;700&display=swap" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/birthday.css" />
+</head>
+<body>
+
+  <div class="site-top">
+
+    <!-- ===== Announcement bar ===== -->
+    <div class="announce">
+      <p class="announce__text">Birthday Sale — 20% Off Sitewide, Incl. Subscriptions · July 21–27</p>
+    </div>
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <div class="header__inner">
+
+        <button class="header__menu" id="menuToggle" aria-label="Open menu"
+                aria-expanded="false" aria-controls="mobileNav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="7" x2="21" y2="7" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="17" x2="21" y2="17" />
+          </svg>
+        </button>
+
+        <a class="header__logo" href="#main" aria-label="Just Ingredients home">
+          <img src="assets/images/logo-black.png" alt="Just Ingredients" />
+        </a>
+
+        <nav class="header__nav" aria-label="Primary">
+          <a href="#bundles">Birthday Bundles</a>
+          <a href="#new">New Arrivals</a>
+          <a href="#">Shop</a>
+          <a href="#">Get Started</a>
+          <a href="#">Trusted Products</a>
+        </nav>
+
+        <div class="header__icons">
+          <button class="icon-btn icon-btn--account" aria-label="Account">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.4" />
+              <path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" />
+            </svg>
+          </button>
+          <button class="icon-btn icon-btn--search" aria-label="Search">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16" y1="16" x2="21" y2="21" />
+            </svg>
+          </button>
+          <button class="icon-btn icon-btn--cart" id="cartButton" aria-label="Cart, 0 items">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 8h12l-1 12H7L6 8z" />
+              <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+            </svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="icon-btn icon-btn--wish" aria-label="Wishlist">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 20s-7-4.3-9.2-9C1.3 8 2.6 4.5 6 4.5c2.2 0 3.4 1.4 4 2.5.6-1.1 1.8-2.5 4-2.5 3.4 0 4.7 3.5 3.2 6.5C19 15.7 12 20 12 20z" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+  </div>
+
+  <!-- ===== Mobile nav drawer ===== -->
+  <div class="mobile-nav__scrim" id="navScrim"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" inert>
+    <button class="mobile-nav__close" id="menuClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+      </svg>
+    </button>
+    <a href="#bundles">Birthday Bundles</a>
+    <a href="#new">New Arrivals</a>
+    <a href="#">Shop</a>
+    <a href="#">Get Started</a>
+    <a href="#">Trusted Products</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===== Hero banner (two parallax layers: art + confetti) ===== -->
+    <section class="hero-banner" id="heroBanner"
+             aria-label="Just Ingredients Birthday Sale — 20% off sitewide, July 21 to 27">
+      <div class="hero-banner__art">
+        <div class="hero-banner__content">
+          <img class="hero-banner__logo" src="assets/images/logo-white.png" alt="Just Ingredients" />
+          <p class="hero-banner__eyebrow">Our Biggest Sale of the Year</p>
+          <h1 class="hero-banner__title">Birthday<br />Sale</h1>
+          <div class="hero-banner__offer">
+            <span class="hero-banner__pct">20% Off</span>
+            <span class="hero-banner__sitewide">Sitewide</span>
+          </div>
+          <p class="hero-banner__dates">July 21st – 27th</p>
+        </div>
+      </div>
+      <img class="hero-banner__confetti" src="assets/images/hero-confetti.svg" alt="" aria-hidden="true" />
+    </section>
+
+    <!-- ===== Karalyn's Favorites: preset bundles ===== -->
+    <section class="bundles" id="bundles" aria-label="Karalyn's favorite bundles">
+      <header class="bundles__head">
+        <span class="bundles__kicker">Karalyn's Favorites</span>
+        <h2 class="bundles__title">Pick a Birthday Bundle</h2>
+        <p class="bundles__sub">Five ready-made favorites from our founder — each already 20% off.</p>
+      </header>
+
+      <div class="carousel" data-carousel data-carousel-static-desktop>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+
+            <!-- Bundle 1 -->
+            <article class="bundle-card" data-product-card data-planpick-card>
+              <span class="bundle-card__save">Save 20%</span>
+              <div class="bundle-card__media">
+                <img class="bundle-card__thumb" data-product-img src="assets/images/products/neapolitan.webp" alt="Neapolitan Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/peaches-and-cream.webp" alt="Peaches and Cream Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
+              </div>
+              <h3 class="bundle-card__name">The Daily Ritual</h3>
+              <p class="bundle-card__contents">3 Protein + 1 Electrolyte</p>
+              <div class="planpick" role="group" aria-label="Purchase plan">
+                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
+                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
+              </div>
+              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
+              <p class="bundle-card__price">
+                <span class="bundle-card__was">$149.96</span>
+                <span class="bundle-card__now">$119.97</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="daily-ritual" data-name="The Daily Ritual Bundle"
+                      data-image="assets/images/products/neapolitan.webp">
+                <span class="btn-add__label">Add Bundle to Cart</span>
+              </button>
+            </article>
+
+            <!-- Bundle 2 -->
+            <article class="bundle-card" data-product-card data-planpick-card>
+              <span class="bundle-card__save">Save 20%</span>
+              <div class="bundle-card__media">
+                <img class="bundle-card__thumb" data-product-img src="assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
+                <img class="bundle-card__thumb" src="assets/images/products/orange-electrolytes.webp" alt="Orange Electrolytes" />
+                <img class="bundle-card__thumb" src="assets/images/products/watermelon-lime.webp" alt="Watermelon Lime Electrolytes" />
+                <img class="bundle-card__thumb" src="assets/images/products/rocket-berry.webp" alt="Rocket Berry Electrolytes" />
+              </div>
+              <h3 class="bundle-card__name">Whole-Family Hydration</h3>
+              <p class="bundle-card__contents">4 Electrolytes</p>
+              <div class="planpick" role="group" aria-label="Purchase plan">
+                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
+                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
+              </div>
+              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
+              <p class="bundle-card__price">
+                <span class="bundle-card__was">$119.96</span>
+                <span class="bundle-card__now">$95.97</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="family-hydration" data-name="Whole-Family Hydration Bundle"
+                      data-image="assets/images/products/peach-electrolytes.webp">
+                <span class="btn-add__label">Add Bundle to Cart</span>
+              </button>
+            </article>
+
+            <!-- Bundle 3 -->
+            <article class="bundle-card" data-product-card data-planpick-card>
+              <span class="bundle-card__save">Save 20%</span>
+              <div class="bundle-card__media">
+                <img class="bundle-card__thumb" data-product-img src="assets/images/products/peaches-and-cream.webp" alt="Peaches and Cream Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
+                <img class="bundle-card__thumb" src="assets/images/products/sweet-strawberry.webp" alt="Sweet Strawberry Electrolytes" />
+              </div>
+              <h3 class="bundle-card__name">Morning Boost</h3>
+              <p class="bundle-card__contents">2 Protein + 2 Electrolyte</p>
+              <div class="planpick" role="group" aria-label="Purchase plan">
+                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
+                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
+              </div>
+              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
+              <p class="bundle-card__price">
+                <span class="bundle-card__was">$139.96</span>
+                <span class="bundle-card__now">$111.97</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="morning-boost" data-name="Morning Boost Bundle"
+                      data-image="assets/images/products/peaches-and-cream.webp">
+                <span class="btn-add__label">Add Bundle to Cart</span>
+              </button>
+            </article>
+
+            <!-- Bundle 4 -->
+            <article class="bundle-card" data-product-card data-planpick-card>
+              <span class="bundle-card__save">Save 20%</span>
+              <div class="bundle-card__media">
+                <img class="bundle-card__thumb" data-product-img src="assets/images/products/grape-soda.webp" alt="Grape Soda Sparkling" />
+                <img class="bundle-card__thumb" src="assets/images/products/orange-fizz.webp" alt="Orange Fizz Sparkling" />
+                <img class="bundle-card__thumb" src="assets/images/products/lemonade.webp" alt="Lemonade Sparkling" />
+                <img class="bundle-card__thumb" src="assets/images/products/strawberry-lemonade.webp" alt="Strawberry Lemonade Sparkling" />
+              </div>
+              <h3 class="bundle-card__name">Sparkling Sampler</h3>
+              <p class="bundle-card__contents">4 Sparkling 12-Packs</p>
+              <div class="planpick" role="group" aria-label="Purchase plan">
+                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
+                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
+              </div>
+              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
+              <p class="bundle-card__price">
+                <span class="bundle-card__was">$119.96</span>
+                <span class="bundle-card__now">$95.97</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="sparkling-sampler" data-name="Sparkling Sampler Bundle"
+                      data-image="assets/images/products/grape-soda.webp">
+                <span class="btn-add__label">Add Bundle to Cart</span>
+              </button>
+            </article>
+
+            <!-- Bundle 5 -->
+            <article class="bundle-card" data-product-card data-planpick-card>
+              <span class="bundle-card__save">Save 20%</span>
+              <div class="bundle-card__media">
+                <img class="bundle-card__thumb" data-product-img src="assets/images/products/neapolitan.webp" alt="Neapolitan Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein" />
+                <img class="bundle-card__thumb" src="assets/images/products/rocket-berry.webp" alt="Rocket Berry Electrolytes" />
+                <img class="bundle-card__thumb" src="assets/images/products/grape-soda.webp" alt="Grape Soda Sparkling" />
+              </div>
+              <h3 class="bundle-card__name">Karalyn's Everything Box</h3>
+              <p class="bundle-card__contents">2 Protein + 1 Electrolyte + 1 Sparkling</p>
+              <div class="planpick" role="group" aria-label="Purchase plan">
+                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
+                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
+              </div>
+              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
+              <p class="bundle-card__price">
+                <span class="bundle-card__was">$159.96</span>
+                <span class="bundle-card__now">$127.97</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="everything-box" data-name="Karalyn's Everything Box"
+                      data-image="assets/images/products/neapolitan.webp">
+                <span class="btn-add__label">Add Bundle to Cart</span>
+              </button>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
+    </section>
+
+    <!-- ===== New Arrivals carousel ===== -->
+    <section class="carousel-section carousel-section--electrolytes" id="new">
+      <header class="section-head">
+        <h2 class="section-head__title">Just Dropped</h2>
+        <p class="section-head__sub">New for our birthday — 20% off like everything else.</p>
+      </header>
+      <div class="carousel" data-carousel data-carousel-static-desktop>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="assets/images/badge-new-pink.webp" alt="" />
+              <img class="pcard__img" data-product-img src="assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
+              <h3 class="pcard__name">Peach</h3>
+              <p class="pcard__type">Electrolytes</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$29.99</span>
+                <span class="pcard__price">$23.99</span>
+                <span>30 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="peach" data-name="Peach Electrolytes"
+                      data-image="assets/images/products/peach-electrolytes.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="assets/images/badge-new-pink.webp" alt="" />
+              <img class="pcard__img" data-product-img src="assets/images/products/orange-electrolytes.webp" alt="Orange Electrolytes" />
+              <h3 class="pcard__name">Orange</h3>
+              <p class="pcard__type">Electrolytes</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$29.99</span>
+                <span class="pcard__price">$23.99</span>
+                <span>30 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="orange" data-name="Orange Electrolytes"
+                      data-image="assets/images/products/orange-electrolytes.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="assets/images/badge-new-pink.webp" alt="" />
+              <img class="pcard__img" data-product-img src="assets/images/products/watermelon-lime.webp" alt="Watermelon Lime Electrolytes" />
+              <h3 class="pcard__name">Watermelon Lime</h3>
+              <p class="pcard__type">Electrolytes</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$29.99</span>
+                <span class="pcard__price">$23.99</span>
+                <span>30 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="watermelon-lime" data-name="Watermelon Lime Electrolytes"
+                      data-image="assets/images/products/watermelon-lime.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="assets/images/badge-new-pink.webp" alt="" />
+              <img class="pcard__img" data-product-img src="assets/images/products/rocket-berry.webp" alt="Rocket Berry Electrolytes" />
+              <h3 class="pcard__name">Rocket Berry</h3>
+              <p class="pcard__type">Electrolytes</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$29.99</span>
+                <span class="pcard__price">$23.99</span>
+                <span>30 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="rocket-berry" data-name="Rocket Berry Electrolytes"
+                      data-image="assets/images/products/rocket-berry.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="assets/images/badge-new-pink.webp" alt="" />
+              <img class="pcard__img" data-product-img src="assets/images/products/sweet-strawberry.webp" alt="Sweet Strawberry Electrolytes" />
+              <h3 class="pcard__name">Sweet Strawberry</h3>
+              <p class="pcard__type">Electrolytes</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$39.99</span>
+                <span class="pcard__price">$31.99</span>
+                <span>45 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="sweet-strawberry" data-name="Sweet Strawberry Electrolytes"
+                      data-image="assets/images/products/sweet-strawberry.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
+    </section>
+
+    <!-- ===== Birthday Sale details FAQ accordion ===== -->
+    <section class="faq">
+      <header class="faq__head">
+        <h2 class="faq__title">Birthday Sale Details</h2>
+        <p class="faq__sub">The fine print on our biggest sale of the year.</p>
+      </header>
+      <div class="faq-list">
+
+        <div class="faq-item faq-item--red">
+          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-1">
+            <span class="faq-item__title">20% Off Everything, Sitewide</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__body" id="faq-1">
+            <div class="faq-item__body-inner">
+              <p>From July 21–27, every product is 20% off automatically — no code needed. That includes new arrivals and the preset bundles.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item faq-item--pink">
+          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-2">
+            <span class="faq-item__title">Lock In 20% on Subscriptions</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__body" id="faq-2">
+            <div class="faq-item__body-inner">
+              <p>Subscriptions are normally 10% off. Start a subscription during the sale and your rate is locked at 20% for as long as you stay subscribed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item faq-item--orange">
+          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-3">
+            <span class="faq-item__title">Karalyn's Favorite Bundles</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__body" id="faq-3">
+            <div class="faq-item__body-inner">
+              <p>Five preset bundles hand-picked by our founder. Each is a single ready-made product — no building required, just add to cart.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item faq-item--green">
+          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-4">
+            <span class="faq-item__title">New Products, Just for Our Birthday</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__body" id="faq-4">
+            <div class="faq-item__body-inner">
+              <p>We're launching new flavors and products to celebrate — all included in the 20% off, all made with just ingredients.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item faq-item--blue">
+          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-5">
+            <span class="faq-item__title">Still the Same Clean Ingredients</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__body" id="faq-5">
+            <div class="faq-item__body-inner">
+              <p>Transparent labeling and third-party testing on everything — sale or not. No artificial flavors, colors, or synthetic preservatives.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Social Proof carousel ===== -->
+    <section class="carousel-section social-proof" id="social-proof">
+      <header class="section-head">
+        <h2 class="section-head__title">What Customers Are Loving</h2>
+        <p class="section-head__sub">Our products have 28,000+ five-star reviews.</p>
+      </header>
+      <div class="carousel" data-carousel data-carousel-autoplay data-carousel-static-desktop>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+
+            <article class="review">
+              <img class="review__photo" src="assets/images/reviews/review-1.jpg" alt="" />
+              <div class="review__person">
+                <p class="review__name">Mary J.</p>
+                <p class="review__verified">
+                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
+                  Verified Buyer
+                </p>
+              </div>
+              <div class="review__quote">
+                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="review__headline">Love the Flavors</p>
+                <p class="review__text">I'm obsessed with the Just Ingredients electrolyte drink! The flavor is amazing, so refreshing and clean. I love that it has zero sugar, but still tastes delicious. Finally, an electrolyte drink I can feel good about drinking every day!!</p>
+              </div>
+            </article>
+
+            <article class="review">
+              <img class="review__photo" src="assets/images/reviews/review-2.jpg" alt="" />
+              <div class="review__person">
+                <p class="review__name">Emma K.</p>
+                <p class="review__verified">
+                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
+                  Verified Buyer
+                </p>
+              </div>
+              <div class="review__quote">
+                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="review__headline">This Is a New Staple</p>
+                <p class="review__text">This is a new staple in the house. Me and my husband both take a scoop every day. I struggle with hydration and if I miss a daily scoop, I notice a migraine coming on.</p>
+              </div>
+            </article>
+
+            <article class="review">
+              <img class="review__photo" src="assets/images/reviews/review-3.jpg" alt="" />
+              <div class="review__person">
+                <p class="review__name">Stefanni J.</p>
+                <p class="review__verified">
+                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
+                  Verified Buyer
+                </p>
+              </div>
+              <div class="review__quote">
+                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="review__headline">The Whole Family Approves</p>
+                <p class="review__text">My kids and husband are skeptical of many electrolyte options, but this one gets their stamp of approval. It's not too salty, but utterly refreshing.</p>
+              </div>
+            </article>
+
+            <article class="review">
+              <img class="review__photo" src="assets/images/reviews/review-4.jpg" alt="" />
+              <div class="review__person">
+                <p class="review__name">Garcia.</p>
+                <p class="review__verified">
+                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
+                  Verified Buyer
+                </p>
+              </div>
+              <div class="review__quote">
+                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="review__headline">One of My Favorites</p>
+                <p class="review__text">Just ingredients is my go-to for electrolytes. Great ingredients and flavor without mystery ingredients!</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
+    </section>
+
+    <!-- ===== Cross-sell: more birthday deals ===== -->
+    <section class="crosssell">
+      <div class="crosssell__sky">
+        <h2 class="crosssell__heading">More Birthday <br />Deals to Shop</h2>
+      </div>
+      <div class="crosssell__deals">
+        <div class="crosssell__callout">
+          <img class="crosssell__badge" src="assets/images/badge-servings.webp" alt="15 serving bags" />
+          <span class="crosssell__offer">
+            <span class="crosssell__pct">20% OFF</span>
+            <span class="crosssell__label">Protein Powder</span>
+          </span>
+        </div>
+        <p class="crosssell__tagline">Stock up on fan-favorite flavors while the sale lasts!</p>
+        <div class="carousel" data-carousel data-carousel-static-desktop>
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+
+              <article class="pcard">
+                <img class="pcard__img" src="assets/images/products/peaches-and-cream.webp" alt="Peaches and Cream Protein Powder" />
+                <h3 class="pcard__name">Peaches and Cream</h3>
+                <p class="pcard__type">Protein Powder</p>
+                <p class="pcard__meta">
+                  <span class="pcard__was">$49.99</span>
+                  <span class="pcard__price">$39.99</span>
+                  <span>15 Servings</span>
+                </p>
+                <button class="btn-add btn-add--block" type="button" data-crosssell>
+                  <span class="btn-add__label">Add to Cart</span>
+                </button>
+              </article>
+
+              <article class="pcard">
+                <img class="pcard__img" src="assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein Powder" />
+                <h3 class="pcard__name">Tropical Paradise</h3>
+                <p class="pcard__type">Protein Powder</p>
+                <p class="pcard__meta">
+                  <span class="pcard__was">$49.99</span>
+                  <span class="pcard__price">$39.99</span>
+                  <span>15 Servings</span>
+                </p>
+                <button class="btn-add btn-add--block" type="button" data-crosssell>
+                  <span class="btn-add__label">Add to Cart</span>
+                </button>
+              </article>
+
+              <article class="pcard">
+                <img class="pcard__img" src="assets/images/products/neapolitan.webp" alt="Neapolitan Protein Powder" />
+                <h3 class="pcard__name">Neapolitan</h3>
+                <p class="pcard__type">Protein Powder</p>
+                <p class="pcard__meta">
+                  <span class="pcard__was">$49.99</span>
+                  <span class="pcard__price">$39.99</span>
+                  <span>15 Servings</span>
+                </p>
+                <button class="btn-add btn-add--block" type="button" data-crosssell>
+                  <span class="btn-add__label">Add to Cart</span>
+                </button>
+              </article>
+
+            </div>
+          </div>
+        </div>
+        <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__cols">
+
+        <section class="footer-col">
+          <button class="footer-col__head" type="button" aria-expanded="false">
+            Shop
+            <svg class="footer-col__chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+          <div class="footer-col__panel">
+            <ul class="footer-col__links">
+              <li><a href="#">Shop All</a></li>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Sports Performance</a></li>
+              <li><a href="#">Protein</a></li>
+              <li><a href="#">Electrolytes</a></li>
+              <li><a href="#">Drinks &amp; Snacks</a></li>
+              <li><a href="#">Supplements</a></li>
+              <li><a href="#">Nutrition</a></li>
+              <li><a href="#">Beauty</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="footer-col">
+          <button class="footer-col__head" type="button" aria-expanded="false">
+            About
+            <svg class="footer-col__chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+          <div class="footer-col__panel">
+            <ul class="footer-col__links">
+              <li><a href="#">The Just Ingredients Difference</a></li>
+              <li><a href="#">Partnerships</a></li>
+              <li><a href="#">Wholesale</a></li>
+              <li><a href="#">Store Locator</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="footer-col">
+          <button class="footer-col__head" type="button" aria-expanded="false">
+            Connect
+            <svg class="footer-col__chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+          <div class="footer-col__panel">
+            <ul class="footer-col__links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Earn Rewards Credits</a></li>
+              <li><a href="#">JI Creator Request</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+              <li><a href="#">Join the Newsletter</a></li>
+              <li><a href="#">Donation Requests</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="footer-col">
+          <button class="footer-col__head" type="button" aria-expanded="false">
+            Learn
+            <svg class="footer-col__chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+          <div class="footer-col__panel">
+            <ul class="footer-col__links">
+              <li><a href="#">Free Guides &amp; Recipes</a></li>
+              <li><a href="#">Podcast</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Media Mentions</a></li>
+              <li><a href="#">Nearby Doctors</a></li>
+              <li><a href="#">HSA/FSA</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="footer-col">
+          <button class="footer-col__head" type="button" aria-expanded="false">
+            Policy
+            <svg class="footer-col__chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+          <div class="footer-col__panel">
+            <ul class="footer-col__links">
+              <li><a href="#">General Policies</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Your Privacy Choices</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Promo Terms</a></li>
+              <li><a href="#">Notice of Financial Incentive</a></li>
+              <li><a href="#">Subscription Portal Info</a></li>
+              <li><a href="#">Subscription FAQ</a></li>
+              <li><a href="#">Accessibility Statement</a></li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="footer__social">
+        <a href="#" aria-label="Just Ingredients on Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3v-2.6c0-3 1.8-4.6 4.5-4.6 1.3 0 2.6.2 2.6.2v2.9h-1.5c-1.4 0-1.9.9-1.9 1.8V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg>
+        </a>
+        <a href="#" aria-label="Just Ingredients on Pinterest">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.3 2C6.9 2 4 5.6 4 9.3c0 1.7 1 3.9 2.5 4.6.3.1.4 0 .5-.2 0-.2.2-.8.3-1 0-.2 0-.3-.1-.5-.5-.6-.8-1.3-.8-2.3 0-3 2.2-5.6 5.8-5.6 3.2 0 4.9 1.9 4.9 4.5 0 3.4-1.5 6.2-3.7 6.2-1.2 0-2.2-1-1.9-2.3.4-1.5 1.1-3 1.1-4.1 0-1-.5-1.8-1.6-1.8-1.2 0-2.3 1.3-2.3 3 0 1.1.4 1.9.4 1.9l-1.5 6.3c-.3 1.4-.1 3.1 0 3.4l1.7-2.5c.2-.5 1-3.1 1-3.1.3.5 1.1 1 2 1 2.7 0 4.6-2.5 4.6-5.8 0-4.1-3.4-7.1-7.7-7.1z"/></svg>
+        </a>
+        <a href="#" aria-label="Just Ingredients on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+
+      <div class="footer__legal">
+        <p class="footer__copyright">&copy; 2026, Just Ingredients Inc. All rights reserved.</p>
+        <p class="footer__fineprint">*Statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        <p class="footer__legal-h">Birthday Sale Terms</p>
+        <p class="footer__fineprint">20% off applies sitewide July 21–27, 2026. Subscription lock-in maintains the 20% rate for as long as the subscription stays active. Discounts apply automatically at checkout and cannot be combined with other offers.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="js/bundle.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/cart-button.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/subscribe.js" defer></script>
+  <script src="js/hero-parallax.js" defer></script>
+</body>
+</html>

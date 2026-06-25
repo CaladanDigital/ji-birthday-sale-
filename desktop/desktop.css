@@ -1,0 +1,73 @@
+/* ============================================================
+   Desktop-only layer for /desktop/index.html
+   Loaded AFTER ../css/sections.css and ../css/birthday.css.
+
+   The landing is already fully responsive (desktop layouts live in the
+   shared CSS at min-width:900px), so this file only adds:
+     1. the PDP-style "View Mobile" iframe-overlay toggle
+     2. a couple of wide-screen polish tweaks
+   Ported from coconut-chocolate-pdp/desktop/styles.css; var(--page) and
+   var(--switzer) swapped for this project's tokens.
+   ============================================================ */
+
+/* ===== Mobile preview overlay ===== */
+.mobile-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--color-white);
+}
+.mobile-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: var(--color-white);
+}
+.mobile-preview[hidden] { display: none; }
+body.mobile-active { overflow: hidden; }
+
+/* ===== View-mode toggle pill =====
+   "View Mobile" on the desktop view; "View Desktop" over the iframe.
+   Only on wide viewports — narrow visitors are redirected to / first. */
+.view-toggle {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 24, 24, 0.88);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.view-toggle:hover { background: #000; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24); }
+.view-toggle:active { transform: translateY(0); }
+.view-toggle .ic { width: 13px; height: 13px; }
+
+@media (min-width: 1024px) {
+  body:not(.mobile-active) .view-toggle-mobile { display: inline-flex; }
+  body.mobile-active .view-toggle-desktop { display: inline-flex; }
+}
+
+/* ===== wide-screen polish ===== */
+@media (min-width: 1024px) {
+  /* give the long-form sections a comfortable max width on big screens */
+  .faq-list {
+    max-width: 760px;
+  }
+}

@@ -1,0 +1,390 @@
+/* ============================================================
+   Birthday Sale - new components layered on top of the inherited
+   Sip Into Summer styles (loaded after sections.css).
+     1. Hero banner + confetti parallax
+     2. "Karalyn's Favorites" preset bundle picker
+     3. Subscription lock-in toggle
+     4. Cart-icon bump
+   Mobile-first; desktop overrides in min-width media queries.
+   ============================================================ */
+
+/* ============================================================
+   1. Hero banner (the provided art, rebuilt as two parallax layers)
+   ------------------------------------------------------------
+   .hero-banner__art   = pink gradient + text/logo (the "background")
+   .hero-banner__confetti = transparent confetti, the layer that falls
+   To use a real exported image instead, replace .hero-banner__art's
+   inner markup with <img class="hero-banner__art" src="...banner.jpg">.
+   ============================================================ */
+
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-banner__art {
+  position: relative;
+  z-index: 1;
+  min-height: 74vh;
+  max-height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 24px 40px;
+  background: var(--grad-birthday);
+  will-change: transform;
+}
+
+.hero-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 560px;
+}
+
+.hero-banner__logo {
+  width: 132px;
+  height: auto;
+  margin-bottom: 4px;
+  order: 1;
+}
+
+.hero-banner__eyebrow {
+  order: 2;
+  color: var(--color-white);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 13px;
+}
+
+.hero-banner__title {
+  order: 3;
+  font-family: 'Fredoka', var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-variation-settings: normal;
+  color: var(--color-white);
+  text-transform: uppercase;
+  line-height: 0.92;
+  font-size: clamp(40px, 13.5vw, 96px);
+  letter-spacing: -0.015em;
+  text-shadow: 4px 5px 0 rgba(236, 28, 109, 0.55);
+}
+
+.hero-banner__offer {
+  order: 4;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--color-white);
+  border-radius: 22px;
+  padding: 16px 44px 14px;
+  margin-top: 6px;
+  box-shadow: 0 10px 24px rgba(180, 20, 70, 0.18);
+}
+
+.hero-banner__pct {
+  font-family: 'Fredoka', var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-variation-settings: normal;
+  color: var(--color-pink);
+  font-size: clamp(34px, 11vw, 52px);
+  line-height: 1;
+}
+
+.hero-banner__sitewide {
+  color: var(--color-pink);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+}
+
+.hero-banner__dates {
+  order: 5;
+  background: var(--color-pink);
+  color: var(--color-white);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 17px;
+  padding: 11px 28px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 18px rgba(180, 20, 70, 0.22);
+}
+
+/* confetti overlay - taller than the hero so it has travel room */
+.hero-banner__confetti {
+  position: absolute;
+  left: -6%;
+  top: -16%;
+  width: 112%;
+  height: 132%;
+  z-index: 2;
+  object-fit: cover;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-banner__confetti {
+    animation: confetti-bob 9s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes confetti-bob {
+  from { translate: 0 -6px; }
+  to   { translate: 0 6px; }
+}
+
+/* --- desktop: wide banner, drop the logo + 20% card (header carries them).
+   900px matches the SIS desktop breakpoint + carousel.js static threshold. --- */
+@media (min-width: 900px) {
+  .hero-banner__art {
+    min-height: 0;
+    height: 360px;
+    max-height: none;
+    padding: 0 56px;
+  }
+
+  .hero-banner__content {
+    max-width: var(--frame-desktop);
+    gap: 10px;
+  }
+
+  .hero-banner__logo,
+  .hero-banner__offer {
+    display: none;
+  }
+
+  .hero-banner__title {
+    order: 1;
+    font-size: clamp(80px, 11vw, 150px);
+    text-shadow: 5px 6px 0 rgba(236, 28, 109, 0.5);
+  }
+
+  .hero-banner__eyebrow {
+    order: 2;
+    font-size: clamp(18px, 2.2vw, 30px);
+    letter-spacing: 0.2em;
+  }
+
+  .hero-banner__dates {
+    order: 3;
+    font-size: 20px;
+    margin-top: 6px;
+  }
+}
+
+/* ============================================================
+   2. "Karalyn's Favorites" preset bundle picker
+   ============================================================ */
+
+.bundles {
+  background: var(--grad-birthday-soft);
+  padding: 40px 0 44px;
+}
+
+.bundles__head {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 22px;
+}
+
+.bundles__kicker {
+  display: inline-block;
+  color: var(--color-pink);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  margin-bottom: 6px;
+}
+
+.bundles__title {
+  font-size: 30px;
+}
+
+.bundles__sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* card */
+.bundle-card {
+  position: relative;
+  flex: 0 0 268px;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 8px 24px rgba(180, 20, 70, 0.10);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: center;
+}
+
+.bundle-card__save {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background: var(--color-pink);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+}
+
+.bundle-card__media {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: var(--grad-birthday-soft);
+  border-radius: 12px;
+  padding: 12px 10px;
+  margin-bottom: 14px;
+}
+
+.bundle-card__thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.bundle-card__name {
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.bundle-card__contents {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+}
+
+/* plan toggle */
+.planpick {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 14px 0 6px;
+  background: #f3f3f5;
+  border-radius: var(--radius-button);
+  padding: 4px;
+}
+
+.planpick__btn {
+  border-radius: 6px;
+  padding: 8px 6px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  color: var(--color-muted);
+  text-align: center;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.planpick__btn b {
+  display: block;
+  font-size: 13px;
+  color: var(--color-ink);
+}
+
+.planpick__btn.is-active {
+  background: var(--color-white);
+  color: var(--color-ink);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+.planpick__btn.is-active b {
+  color: var(--color-pink);
+}
+
+.bundle-card__note {
+  min-height: 32px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+
+/* a subscriber-only "locked" cue */
+.bundle-card.is-sub {
+  outline: 2px solid var(--color-pink);
+  outline-offset: -2px;
+}
+
+.bundle-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.bundle-card__was {
+  color: var(--color-muted);
+  text-decoration: line-through;
+  font-size: 15px;
+}
+
+.bundle-card__now {
+  font-size: 24px;
+  font-weight: var(--weight-bold);
+  color: var(--color-pink);
+}
+
+.bundle-card .btn-add {
+  margin-top: auto;
+}
+
+/* --- desktop: 5 across, no carousel scroll (matches carousel.js static @900) --- */
+@media (min-width: 900px) {
+  .bundles__title {
+    font-size: 40px;
+  }
+
+  .bundles .carousel__track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    max-width: var(--frame-desktop);
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .bundle-card {
+    flex: initial;
+  }
+}
+
+/* ============================================================
+   4. Cart-icon bump when an item lands
+   ============================================================ */
+.icon-btn--cart.cart-bump {
+  animation: cart-bump 420ms var(--ease-out);
+}
+
+@keyframes cart-bump {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.28); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-btn--cart.cart-bump {
+    animation: none;
+  }
+}

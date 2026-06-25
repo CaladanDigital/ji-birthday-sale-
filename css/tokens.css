@@ -1,0 +1,64 @@
+/* ============================================================
+   Design tokens - Just Ingredients Birthday Sale
+   Forked from the Sip Into Summer landing. The summer palette was
+   swapped for the birthday-sale art (hot-pink gradient banner):
+   the brand accent that drives Add-to-Cart buttons, the cart badge,
+   focus rings and hovers is now magenta-pink rather than orange.
+   ============================================================ */
+
+:root {
+
+  /* ---- Brand color ----
+     Repurposed: --color-orange is the single brand-accent token the
+     whole UI reskins from (Add to Cart, cart badge, focus ring). It is
+     now the birthday magenta-pink, not orange. Kept the variable name
+     so the rest of the CSS needs no churn. */
+  --color-orange: #ec1c6d;        /* brand accent (birthday magenta-pink) */
+  --color-ink: #000000;           /* primary text */
+  --color-white: #ffffff;
+  --color-muted: rgba(0, 0, 0, 0.57);   /* secondary copy */
+  --color-hairline: rgba(0, 0, 0, 0.12);
+
+  /* ---- Birthday palette (sampled from the provided banner art) ---- */
+  --color-magenta: #ec1066;       /* deep top of the banner gradient */
+  --color-pink: #f4538f;          /* mid pink, CTAs / "lock in" badge */
+  --color-pink-soft: #f8a8b6;     /* soft blush, bottom of the gradient */
+  --grad-birthday: linear-gradient(168deg, #ec1066 0%, #f4709c 46%, #f8b0b4 100%);
+  --grad-birthday-soft: linear-gradient(180deg, #fbd9e2 0%, #fdeef1 100%);
+
+  /* ---- Typography ---- */
+  /* Fraunces (Google Fonts) for display headlines, Josefin Sans for body.
+     Headlines render Extra Bold (800) with the SOFT axis at 100 - see base.css. */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Josefin Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Radii ---- */
+  --radius-slot: 7px;             /* bundle slots, product cards */
+  --radius-button: 8px;           /* buttons, quantity stepper */
+  --radius-pill: 999px;           /* toasts */
+  --radius-tag: 3px;              /* FREE tag */
+
+  /* ---- Elevation ---- */
+  --shadow-sticky: 0 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-tag: 0 4px 4px rgba(0, 0, 0, 0.06);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-accordion: cubic-bezier(0.87, 0, 0.13, 1);
+  --dur-fast: 250ms;
+  --dur-base: 300ms;
+  --dur-fly: 500ms;
+
+  /* ---- Layout ---- */
+  --frame-mobile: 402px;          /* Figma mobile frame width */
+  --frame-desktop: 1512px;        /* Figma desktop frame width */
+  --header-h: 88px;               /* announcement bar + header */
+
+  /* ---- Section palettes (verified per section during build) ---- */
+  /* --bg-hero, --bg-bundle, --bg-peach, etc. added in Tasks 4+ */
+}
