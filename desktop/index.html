@@ -24,9 +24,17 @@
 
   <div class="site-top">
 
-    <!-- ===== Announcement bar ===== -->
+    <!-- ===== Announcement bar (live countdown) ===== -->
     <div class="announce">
-      <p class="announce__text">Birthday Sale — 20% Off Sitewide, Incl. Subscriptions · July 21–27</p>
+      <p class="announce__text" data-countdown data-deadline="2026-07-27T23:59:59">
+        <span class="announce__label">Birthday Sale Ends In</span>
+        <span class="countdown" aria-hidden="true">
+          <span class="countdown__unit"><b data-cd="days">28</b> Days</span>
+          <span class="countdown__unit"><b data-cd="hours">00</b> Hrs</span>
+          <span class="countdown__unit"><b data-cd="mins">00</b> Min</span>
+        </span>
+        <span class="visually-hidden" data-cd-sr>Birthday sale ends July 27.</span>
+      </p>
     </div>
 
     <!-- ===== Header ===== -->
@@ -125,173 +133,35 @@
       <img class="hero-banner__confetti" src="../assets/images/hero-confetti.png" alt="" aria-hidden="true" />
     </section>
 
-    <!-- ===== Karalyn's Favorites: preset bundles ===== -->
-    <section class="bundles" id="bundles" aria-label="Karalyn's favorite bundles">
-      <header class="bundles__head">
-        <span class="bundles__kicker">Karalyn's Favorites</span>
-        <h2 class="bundles__title">Pick a Birthday Bundle</h2>
-        <p class="bundles__sub">Five ready-made favorites from our founder — each already 20% off.</p>
-      </header>
-
-      <div class="carousel" data-carousel data-carousel-static-desktop>
-        <div class="carousel__viewport">
-          <div class="carousel__track">
-
-            <!-- Bundle 1 -->
-            <article class="bundle-card" data-product-card data-planpick-card>
-              <span class="bundle-card__save">Save 20%</span>
-              <div class="bundle-card__media">
-                <img class="bundle-card__thumb" data-product-img src="../assets/images/products/neapolitan.webp" alt="Neapolitan Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/peaches-and-cream.webp" alt="Peaches and Cream Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
-              </div>
-              <h3 class="bundle-card__name">The Daily Ritual</h3>
-              <p class="bundle-card__contents">3 Protein + 1 Electrolyte</p>
-              <div class="planpick" role="group" aria-label="Purchase plan">
-                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
-                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
-              </div>
-              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
-              <p class="bundle-card__price">
-                <span class="bundle-card__was">$149.96</span>
-                <span class="bundle-card__now">$119.97</span>
-              </p>
-              <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="daily-ritual" data-name="The Daily Ritual Bundle"
-                      data-image="assets/images/products/neapolitan.webp">
-                <span class="btn-add__label">Add Bundle to Cart</span>
-              </button>
-            </article>
-
-            <!-- Bundle 2 -->
-            <article class="bundle-card" data-product-card data-planpick-card>
-              <span class="bundle-card__save">Save 20%</span>
-              <div class="bundle-card__media">
-                <img class="bundle-card__thumb" data-product-img src="../assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
-                <img class="bundle-card__thumb" src="../assets/images/products/orange-electrolytes.webp" alt="Orange Electrolytes" />
-                <img class="bundle-card__thumb" src="../assets/images/products/watermelon-lime.webp" alt="Watermelon Lime Electrolytes" />
-                <img class="bundle-card__thumb" src="../assets/images/products/rocket-berry.webp" alt="Rocket Berry Electrolytes" />
-              </div>
-              <h3 class="bundle-card__name">Whole-Family Hydration</h3>
-              <p class="bundle-card__contents">4 Electrolytes</p>
-              <div class="planpick" role="group" aria-label="Purchase plan">
-                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
-                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
-              </div>
-              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
-              <p class="bundle-card__price">
-                <span class="bundle-card__was">$119.96</span>
-                <span class="bundle-card__now">$95.97</span>
-              </p>
-              <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="family-hydration" data-name="Whole-Family Hydration Bundle"
-                      data-image="assets/images/products/peach-electrolytes.webp">
-                <span class="btn-add__label">Add Bundle to Cart</span>
-              </button>
-            </article>
-
-            <!-- Bundle 3 -->
-            <article class="bundle-card" data-product-card data-planpick-card>
-              <span class="bundle-card__save">Save 20%</span>
-              <div class="bundle-card__media">
-                <img class="bundle-card__thumb" data-product-img src="../assets/images/products/peaches-and-cream.webp" alt="Peaches and Cream Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
-                <img class="bundle-card__thumb" src="../assets/images/products/sweet-strawberry.webp" alt="Sweet Strawberry Electrolytes" />
-              </div>
-              <h3 class="bundle-card__name">Morning Boost</h3>
-              <p class="bundle-card__contents">2 Protein + 2 Electrolyte</p>
-              <div class="planpick" role="group" aria-label="Purchase plan">
-                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
-                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
-              </div>
-              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
-              <p class="bundle-card__price">
-                <span class="bundle-card__was">$139.96</span>
-                <span class="bundle-card__now">$111.97</span>
-              </p>
-              <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="morning-boost" data-name="Morning Boost Bundle"
-                      data-image="assets/images/products/peaches-and-cream.webp">
-                <span class="btn-add__label">Add Bundle to Cart</span>
-              </button>
-            </article>
-
-            <!-- Bundle 4 -->
-            <article class="bundle-card" data-product-card data-planpick-card>
-              <span class="bundle-card__save">Save 20%</span>
-              <div class="bundle-card__media">
-                <img class="bundle-card__thumb" data-product-img src="../assets/images/products/grape-soda.webp" alt="Grape Soda Sparkling" />
-                <img class="bundle-card__thumb" src="../assets/images/products/orange-fizz.webp" alt="Orange Fizz Sparkling" />
-                <img class="bundle-card__thumb" src="../assets/images/products/lemonade.webp" alt="Lemonade Sparkling" />
-                <img class="bundle-card__thumb" src="../assets/images/products/strawberry-lemonade.webp" alt="Strawberry Lemonade Sparkling" />
-              </div>
-              <h3 class="bundle-card__name">Sparkling Sampler</h3>
-              <p class="bundle-card__contents">4 Sparkling 12-Packs</p>
-              <div class="planpick" role="group" aria-label="Purchase plan">
-                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
-                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
-              </div>
-              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
-              <p class="bundle-card__price">
-                <span class="bundle-card__was">$119.96</span>
-                <span class="bundle-card__now">$95.97</span>
-              </p>
-              <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="sparkling-sampler" data-name="Sparkling Sampler Bundle"
-                      data-image="assets/images/products/grape-soda.webp">
-                <span class="btn-add__label">Add Bundle to Cart</span>
-              </button>
-            </article>
-
-            <!-- Bundle 5 -->
-            <article class="bundle-card" data-product-card data-planpick-card>
-              <span class="bundle-card__save">Save 20%</span>
-              <div class="bundle-card__media">
-                <img class="bundle-card__thumb" data-product-img src="../assets/images/products/neapolitan.webp" alt="Neapolitan Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein" />
-                <img class="bundle-card__thumb" src="../assets/images/products/rocket-berry.webp" alt="Rocket Berry Electrolytes" />
-                <img class="bundle-card__thumb" src="../assets/images/products/grape-soda.webp" alt="Grape Soda Sparkling" />
-              </div>
-              <h3 class="bundle-card__name">Karalyn's Everything Box</h3>
-              <p class="bundle-card__contents">2 Protein + 1 Electrolyte + 1 Sparkling</p>
-              <div class="planpick" role="group" aria-label="Purchase plan">
-                <button class="planpick__btn is-active" type="button" data-plan="once" aria-pressed="true">One-Time<b>20% off</b></button>
-                <button class="planpick__btn" type="button" data-plan="sub" aria-pressed="false">Subscribe<b>Lock in 20%</b></button>
-              </div>
-              <p class="bundle-card__note" data-plan-note>One-time order — 20% off during the Birthday Sale.</p>
-              <p class="bundle-card__price">
-                <span class="bundle-card__was">$159.96</span>
-                <span class="bundle-card__now">$127.97</span>
-              </p>
-              <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="everything-box" data-name="Karalyn's Everything Box"
-                      data-image="assets/images/products/neapolitan.webp">
-                <span class="btn-add__label">Add Bundle to Cart</span>
-              </button>
-            </article>
-
-          </div>
-        </div>
-      </div>
-      <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
-    </section>
-
-    <!-- ===== New Arrivals carousel ===== -->
-    <section class="carousel-section carousel-section--electrolytes" id="new">
+    <!-- ===== Best Sellers ===== -->
+    <section class="carousel-section carousel-section--bestsellers" id="bestsellers" aria-label="Best sellers">
       <header class="section-head">
-        <h2 class="section-head__title">Just Dropped</h2>
-        <p class="section-head__sub">New for our birthday — 20% off like everything else.</p>
+        <h2 class="section-head__title">Best Sellers</h2>
+        <p class="section-head__sub">Our most-loved picks — 20% off for the Birthday Sale.</p>
       </header>
       <div class="carousel" data-carousel data-carousel-static-desktop>
         <div class="carousel__viewport">
           <div class="carousel__track">
 
             <article class="pcard" data-product-card>
-              <img class="pcard__badge" src="../assets/images/badge-new-pink.webp" alt="" />
-              <img class="pcard__img" data-product-img src="../assets/images/products/peach-electrolytes.webp" alt="Peach Electrolytes" />
-              <h3 class="pcard__name">Peach</h3>
+              <img class="pcard__img" data-product-img src="../assets/images/best-creatine.png" alt="Creatine+ Creatine Complex" />
+              <h3 class="pcard__name">Creatine+</h3>
+              <p class="pcard__type">Creatine Complex</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$24.99</span>
+                <span class="pcard__price">$19.99</span>
+                <span>30 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="creatine-plus" data-name="Creatine+"
+                      data-image="../assets/images/best-creatine.png">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__img" data-product-img src="../assets/images/best-electrolytes.png" alt="Blue Hawaiian Electrolytes" />
+              <h3 class="pcard__name">Blue Hawaiian</h3>
               <p class="pcard__type">Electrolytes</p>
               <p class="pcard__meta">
                 <span class="pcard__was">$29.99</span>
@@ -299,76 +169,56 @@
                 <span>30 Servings</span>
               </p>
               <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="peach" data-name="Peach Electrolytes"
-                      data-image="assets/images/products/peach-electrolytes.webp">
+                      data-id="blue-hawaiian" data-name="Blue Hawaiian Electrolytes"
+                      data-image="../assets/images/best-electrolytes.png">
                 <span class="btn-add__label">Add to Cart</span>
               </button>
             </article>
 
             <article class="pcard" data-product-card>
-              <img class="pcard__badge" src="../assets/images/badge-new-pink.webp" alt="" />
-              <img class="pcard__img" data-product-img src="../assets/images/products/orange-electrolytes.webp" alt="Orange Electrolytes" />
-              <h3 class="pcard__name">Orange</h3>
-              <p class="pcard__type">Electrolytes</p>
+              <img class="pcard__img" data-product-img src="../assets/images/best-chocolate-protein.png" alt="Chocolate Protein Powder" />
+              <h3 class="pcard__name">Chocolate</h3>
+              <p class="pcard__type">Protein Powder</p>
               <p class="pcard__meta">
-                <span class="pcard__was">$29.99</span>
-                <span class="pcard__price">$23.99</span>
+                <span class="pcard__was">$54.99</span>
+                <span class="pcard__price">$43.99</span>
                 <span>30 Servings</span>
               </p>
               <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="orange" data-name="Orange Electrolytes"
-                      data-image="assets/images/products/orange-electrolytes.webp">
+                      data-id="chocolate-protein" data-name="Chocolate Protein Powder"
+                      data-image="../assets/images/best-chocolate-protein.png">
                 <span class="btn-add__label">Add to Cart</span>
               </button>
             </article>
 
             <article class="pcard" data-product-card>
-              <img class="pcard__badge" src="../assets/images/badge-new-pink.webp" alt="" />
-              <img class="pcard__img" data-product-img src="../assets/images/products/watermelon-lime.webp" alt="Watermelon Lime Electrolytes" />
-              <h3 class="pcard__name">Watermelon Lime</h3>
-              <p class="pcard__type">Electrolytes</p>
+              <img class="pcard__img" data-product-img src="../assets/images/best-vanilla-protein.png" alt="French Vanilla Protein Powder" />
+              <h3 class="pcard__name">French Vanilla</h3>
+              <p class="pcard__type">Protein Powder</p>
               <p class="pcard__meta">
-                <span class="pcard__was">$29.99</span>
-                <span class="pcard__price">$23.99</span>
+                <span class="pcard__was">$54.99</span>
+                <span class="pcard__price">$43.99</span>
                 <span>30 Servings</span>
               </p>
               <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="watermelon-lime" data-name="Watermelon Lime Electrolytes"
-                      data-image="assets/images/products/watermelon-lime.webp">
+                      data-id="french-vanilla-protein" data-name="French Vanilla Protein Powder"
+                      data-image="../assets/images/best-vanilla-protein.png">
                 <span class="btn-add__label">Add to Cart</span>
               </button>
             </article>
 
             <article class="pcard" data-product-card>
-              <img class="pcard__badge" src="../assets/images/badge-new-pink.webp" alt="" />
-              <img class="pcard__img" data-product-img src="../assets/images/products/rocket-berry.webp" alt="Rocket Berry Electrolytes" />
-              <h3 class="pcard__name">Rocket Berry</h3>
-              <p class="pcard__type">Electrolytes</p>
+              <img class="pcard__img" data-product-img src="../assets/images/best-magnesium.png" alt="Magnesium Complex Supplement" />
+              <h3 class="pcard__name">Magnesium</h3>
+              <p class="pcard__type">Complex Supplement</p>
               <p class="pcard__meta">
-                <span class="pcard__was">$29.99</span>
-                <span class="pcard__price">$23.99</span>
-                <span>30 Servings</span>
+                <span class="pcard__was">$24.99</span>
+                <span class="pcard__price">$19.99</span>
+                <span>60 Capsules</span>
               </p>
               <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="rocket-berry" data-name="Rocket Berry Electrolytes"
-                      data-image="assets/images/products/rocket-berry.webp">
-                <span class="btn-add__label">Add to Cart</span>
-              </button>
-            </article>
-
-            <article class="pcard" data-product-card>
-              <img class="pcard__badge" src="../assets/images/badge-new-pink.webp" alt="" />
-              <img class="pcard__img" data-product-img src="../assets/images/products/sweet-strawberry.webp" alt="Sweet Strawberry Electrolytes" />
-              <h3 class="pcard__name">Sweet Strawberry</h3>
-              <p class="pcard__type">Electrolytes</p>
-              <p class="pcard__meta">
-                <span class="pcard__was">$39.99</span>
-                <span class="pcard__price">$31.99</span>
-                <span>45 Servings</span>
-              </p>
-              <button class="btn-add btn-add--block" type="button" data-add-to-cart
-                      data-id="sweet-strawberry" data-name="Sweet Strawberry Electrolytes"
-                      data-image="assets/images/products/sweet-strawberry.webp">
+                      data-id="magnesium-complex" data-name="Magnesium Complex"
+                      data-image="../assets/images/best-magnesium.png">
                 <span class="btn-add__label">Add to Cart</span>
               </button>
             </article>
@@ -379,75 +229,264 @@
       <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
     </section>
 
-    <!-- ===== Birthday Sale details FAQ accordion ===== -->
-    <section class="faq">
-      <header class="faq__head">
-        <h2 class="faq__title">Birthday Sale Details</h2>
-        <p class="faq__sub">The fine print on our biggest sale of the year.</p>
-      </header>
-      <div class="faq-list">
-
-        <div class="faq-item faq-item--red">
-          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-1">
-            <span class="faq-item__title">20% Off Everything, Sitewide</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__body" id="faq-1">
-            <div class="faq-item__body-inner">
-              <p>From July 21–27, every product is 20% off automatically — no code needed. That includes new arrivals and the preset bundles.</p>
-            </div>
-          </div>
+    <!-- ===== Scrolling "Birthday Sale" marquee ===== -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
         </div>
-
-        <div class="faq-item faq-item--pink">
-          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-2">
-            <span class="faq-item__title">Lock In 20% on Subscriptions</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__body" id="faq-2">
-            <div class="faq-item__body-inner">
-              <p>Subscriptions are normally 10% off. Start a subscription during the sale and your rate is locked at 20% for as long as you stay subscribed.</p>
-            </div>
-          </div>
+        <div class="marquee__group">
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
+          <img class="marquee__img" src="../assets/images/birthday-sale-text.png" alt="" />
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item faq-item--orange">
-          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-3">
-            <span class="faq-item__title">Karalyn's Favorite Bundles</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__body" id="faq-3">
-            <div class="faq-item__body-inner">
-              <p>Five preset bundles hand-picked by our founder. Each is a single ready-made product — no building required, just add to cart.</p>
-            </div>
-          </div>
+    <!-- ===== Founder story ===== -->
+    <section class="founder" id="founder" aria-label="Celebrating Five Years">
+      <div class="founder__inner">
+        <img class="founder__image" src="../assets/images/karalynne-founder.png"
+             alt="Karalynne Call, founder of Just Ingredients" />
+        <div class="founder__body">
+          <h2 class="founder__title">Celebrating Five Years</h2>
+          <p class="founder__text">It started with Karalynne Call, a mom of six who couldn't find clean products she trusted, so she made her own. No unnecessary fillers, no shortcuts, just real ingredients made for daily life. That choice grew into a community of over a million people who wanted the same thing. Five years later, real ingredients are still the whole point.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item faq-item--green">
-          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-4">
-            <span class="faq-item__title">New Products, Just for Our Birthday</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__body" id="faq-4">
-            <div class="faq-item__body-inner">
-              <p>We're launching new flavors and products to celebrate — all included in the 20% off, all made with just ingredients.</p>
-            </div>
-          </div>
-        </div>
+    <!-- ===== Flavors You Crave (new Energy + Brain Boost line) ===== -->
+    <section class="flavors" id="flavors" aria-label="New flavors you crave">
+      <img class="flavors__banner" src="../assets/images/flavors-crave.png"
+           alt="Flavors You Crave — finally, an energy drink that works with your body" />
+      <div class="flavors__copy">
+        <h3>Energy Drink</h3>
+        <p>An energy drink that works with your body. 100mg clean caffeine, mood-balancing adaptogens, and real fruit flavor, with no artificial dyes or added sugar.</p>
+      </div>
 
-        <div class="faq-item faq-item--blue">
-          <button class="faq-item__header" type="button" aria-expanded="false" aria-controls="faq-5">
-            <span class="faq-item__title">Still the Same Clean Ingredients</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
+      <div class="carousel" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+          <img class="pcard__img" data-product-img src="../assets/images/energy-arctic-beast.png" alt="Arctic Beast" />
+          <h3 class="pcard__name">Arctic Beast</h3>
+          <p class="pcard__type">Energy + Brain Boost</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$34.99</span>
+            <span class="pcard__price">$27.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="energy-arctic" data-name="Arctic Beast Energy"
+                  data-image="../assets/images/energy-arctic-beast.png">
+            <span class="btn-add__label">Add to Cart</span>
           </button>
-          <div class="faq-item__body" id="faq-5">
-            <div class="faq-item__body-inner">
-              <p>Transparent labeling and third-party testing on everything — sale or not. No artificial flavors, colors, or synthetic preservatives.</p>
-            </div>
-          </div>
-        </div>
+        </article>
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+          <img class="pcard__img" data-product-img src="../assets/images/energy-coastal-blast.png" alt="Coastal Blast" />
+          <h3 class="pcard__name">Coastal Blast</h3>
+          <p class="pcard__type">Energy + Brain Boost</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$34.99</span>
+            <span class="pcard__price">$27.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="energy-coastal" data-name="Coastal Blast Energy"
+                  data-image="../assets/images/energy-coastal-blast.png">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+          <img class="pcard__img" data-product-img src="../assets/images/energy-peach.png" alt="Peach" />
+          <h3 class="pcard__name">Peach</h3>
+          <p class="pcard__type">Energy + Brain Boost</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$34.99</span>
+            <span class="pcard__price">$27.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="energy-peach" data-name="Peach Energy"
+                  data-image="../assets/images/energy-peach.png">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
 
       </div>
+        </div>
+      </div>
+      <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
+    </section>
+
+    <!-- ===== Drink Your Vitamins (new Microgreens Drink line) ===== -->
+    <section class="flavors" id="vitamins" aria-label="New microgreens drinks">
+      <img class="flavors__banner" src="../assets/images/drink-your-vitamins.png"
+           alt="Drink Your Vitamins — a refreshing daily greens drink made with real fruit and microgreens" />
+      <div class="flavors__copy">
+        <h3>Microgreens</h3>
+        <p>A refreshing daily greens drink made with real fruit and locally grown microgreens. One scoop delivers 100% of your B vitamins for the day, with more concentrated nutrition than mature vegetables.</p>
+      </div>
+
+      <div class="flavors__pair">
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+          <img class="pcard__img" data-product-img src="../assets/images/microgreens-sweet-peach.png" alt="Sweet Peach Microgreens" />
+          <h3 class="pcard__name">Sweet Peach</h3>
+          <p class="pcard__type">Microgreens Drink</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$39.99</span>
+            <span class="pcard__price">$31.99</span>
+            <span>20 Servings</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="greens-sweet-peach" data-name="Sweet Peach Microgreens"
+                  data-image="../assets/images/microgreens-sweet-peach.png">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+          <img class="pcard__img" data-product-img src="../assets/images/microgreens-citrus-splash.png" alt="Citrus Splash Microgreens" />
+          <h3 class="pcard__name">Citrus Splash</h3>
+          <p class="pcard__type">Microgreens Drink</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$39.99</span>
+            <span class="pcard__price">$31.99</span>
+            <span>20 Servings</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="greens-citrus-splash" data-name="Citrus Splash Microgreens"
+                  data-image="../assets/images/microgreens-citrus-splash.png">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== Sweet Tooth Satisfied (new Protein Smoothie Mix line) ===== -->
+    <section class="flavors" id="smoothies" aria-label="New protein smoothie mix">
+      <img class="flavors__banner" src="../assets/images/sweet-tooth.png"
+           alt="Sweet Tooth Satisfied — new protein smoothie mix" />
+      <div class="flavors__copy">
+        <h3>Protein Powder</h3>
+        <p>The flavors you crave, without the cheat-day math. A grass-fed whey blend flavored with real food, never artificial flavors, sucralose, or fillers.</p>
+      </div>
+
+      <div class="carousel" data-carousel data-carousel-static-desktop>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+              <img class="pcard__img" data-product-img src="../assets/images/products/rocket-berry.webp" alt="Mixed Berry" />
+              <h3 class="pcard__name">Mixed Berry</h3>
+              <p class="pcard__type">Protein Smoothie Mix</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$44.99</span>
+                <span class="pcard__price">$35.99</span>
+                <span>15 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="smoothie-mixed-berry" data-name="Mixed Berry Smoothie Mix"
+                      data-image="../assets/images/products/rocket-berry.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+              <img class="pcard__img" data-product-img src="../assets/images/products/neapolitan.webp" alt="Chocolate" />
+              <h3 class="pcard__name">Chocolate</h3>
+              <p class="pcard__type">Protein Smoothie Mix</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$44.99</span>
+                <span class="pcard__price">$35.99</span>
+                <span>15 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="smoothie-chocolate" data-name="Chocolate Smoothie Mix"
+                      data-image="../assets/images/products/neapolitan.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+              <img class="pcard__img" data-product-img src="../assets/images/products/peaches-and-cream.webp" alt="Vanilla" />
+              <h3 class="pcard__name">Vanilla</h3>
+              <p class="pcard__type">Protein Smoothie Mix</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$44.99</span>
+                <span class="pcard__price">$35.99</span>
+                <span>15 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="smoothie-vanilla" data-name="Vanilla Smoothie Mix"
+                      data-image="../assets/images/products/peaches-and-cream.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+              <img class="pcard__img" data-product-img src="../assets/images/products/sweet-strawberry.webp" alt="Strawberry Banana" />
+              <h3 class="pcard__name">Strawberry Banana</h3>
+              <p class="pcard__type">Protein Smoothie Mix</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$44.99</span>
+                <span class="pcard__price">$35.99</span>
+                <span>15 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="smoothie-strawberry-banana" data-name="Strawberry Banana Smoothie Mix"
+                      data-image="../assets/images/products/sweet-strawberry.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+            <article class="pcard" data-product-card>
+              <img class="pcard__badge" src="../assets/images/badge-new.png" alt="New" />
+              <img class="pcard__img" data-product-img src="../assets/images/products/tropical-paradise.webp" alt="Peach Mango" />
+              <h3 class="pcard__name">Peach Mango</h3>
+              <p class="pcard__type">Protein Smoothie Mix</p>
+              <p class="pcard__meta">
+                <span class="pcard__was">$44.99</span>
+                <span class="pcard__price">$35.99</span>
+                <span>15 Servings</span>
+              </p>
+              <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                      data-id="smoothie-peach-mango" data-name="Peach Mango Smoothie Mix"
+                      data-image="../assets/images/products/tropical-paradise.webp">
+                <span class="btn-add__label">Add to Cart</span>
+              </button>
+            </article>
+
+          </div>
+        </div>
+      </div>
+      <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
     </section>
 
     <!-- ===== Social Proof carousel ===== -->
@@ -456,72 +495,43 @@
         <h2 class="section-head__title">What Customers Are Loving</h2>
         <p class="section-head__sub">Our products have 28,000+ five-star reviews.</p>
       </header>
-      <div class="carousel" data-carousel data-carousel-autoplay data-carousel-static-desktop>
+      <div class="carousel" data-carousel data-carousel-static-desktop>
         <div class="carousel__viewport">
           <div class="carousel__track">
 
-            <article class="review">
-              <img class="review__photo" src="../assets/images/reviews/review-1.jpg" alt="" />
-              <div class="review__person">
-                <p class="review__name">Mary J.</p>
-                <p class="review__verified">
-                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
-                  Verified Buyer
-                </p>
-              </div>
-              <div class="review__quote">
-                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <p class="review__headline">Love the Flavors</p>
-                <p class="review__text">I'm obsessed with the Just Ingredients electrolyte drink! The flavor is amazing, so refreshing and clean. I love that it has zero sugar, but still tastes delicious. Finally, an electrolyte drink I can feel good about drinking every day!!</p>
-              </div>
+            <article class="rcard">
+              <img class="rcard__thumb" src="../assets/images/reviews/video-bella.jpg" alt="Bella video review" />
+              <svg class="rcard__muted" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z"/></svg>
+              <div class="rcard__body"><svg class="rcard__play" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM252.3 211.1C244.7 215.3 240 223.4 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4C269.2 206.9 259.9 206.7 252.3 210.9z"/></svg></div>
+              <div class="rcard__who"><div class="rcard__nm">Bella</div><div class="rcard__vb"><svg viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>Verified Buyer</div></div>
             </article>
 
-            <article class="review">
-              <img class="review__photo" src="../assets/images/reviews/review-2.jpg" alt="" />
-              <div class="review__person">
-                <p class="review__name">Emma K.</p>
-                <p class="review__verified">
-                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
-                  Verified Buyer
-                </p>
-              </div>
-              <div class="review__quote">
-                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <p class="review__headline">This Is a New Staple</p>
-                <p class="review__text">This is a new staple in the house. Me and my husband both take a scoop every day. I struggle with hydration and if I miss a daily scoop, I notice a migraine coming on.</p>
-              </div>
+            <article class="rcard">
+              <img class="rcard__thumb" src="../assets/images/reviews/video-sierra.jpg" alt="Sierra video review" />
+              <svg class="rcard__muted" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z"/></svg>
+              <div class="rcard__body"><svg class="rcard__play" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM252.3 211.1C244.7 215.3 240 223.4 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4C269.2 206.9 259.9 206.7 252.3 210.9z"/></svg></div>
+              <div class="rcard__who"><div class="rcard__nm">Sierra</div><div class="rcard__vb"><svg viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>Verified Buyer</div></div>
             </article>
 
-            <article class="review">
-              <img class="review__photo" src="../assets/images/reviews/review-3.jpg" alt="" />
-              <div class="review__person">
-                <p class="review__name">Stefanni J.</p>
-                <p class="review__verified">
-                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
-                  Verified Buyer
-                </p>
-              </div>
-              <div class="review__quote">
-                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <p class="review__headline">The Whole Family Approves</p>
-                <p class="review__text">My kids and husband are skeptical of many electrolyte options, but this one gets their stamp of approval. It's not too salty, but utterly refreshing.</p>
-              </div>
+            <article class="rcard">
+              <img class="rcard__thumb" src="../assets/images/reviews/video-tyler.jpg" alt="Tyler video review" />
+              <svg class="rcard__muted" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z"/></svg>
+              <div class="rcard__body"><svg class="rcard__play" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM252.3 211.1C244.7 215.3 240 223.4 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4C269.2 206.9 259.9 206.7 252.3 210.9z"/></svg></div>
+              <div class="rcard__who"><div class="rcard__nm">Tyler</div><div class="rcard__vb"><svg viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>Verified Buyer</div></div>
             </article>
 
-            <article class="review">
-              <img class="review__photo" src="../assets/images/reviews/review-4.jpg" alt="" />
-              <div class="review__person">
-                <p class="review__name">Garcia.</p>
-                <p class="review__verified">
-                  <svg viewBox="0 0 640 640" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>
-                  Verified Buyer
-                </p>
-              </div>
-              <div class="review__quote">
-                <span class="review__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <p class="review__headline">One of My Favorites</p>
-                <p class="review__text">Just ingredients is my go-to for electrolytes. Great ingredients and flavor without mystery ingredients!</p>
-              </div>
+            <article class="rcard">
+              <img class="rcard__thumb" src="../assets/images/reviews/video-lauren.jpg" alt="Lauren video review" />
+              <svg class="rcard__muted" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z"/></svg>
+              <div class="rcard__body"><svg class="rcard__play" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM252.3 211.1C244.7 215.3 240 223.4 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4C269.2 206.9 259.9 206.7 252.3 210.9z"/></svg></div>
+              <div class="rcard__who"><div class="rcard__nm">Lauren</div><div class="rcard__vb"><svg viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>Verified Buyer</div></div>
+            </article>
+
+            <article class="rcard">
+              <img class="rcard__thumb" src="../assets/images/reviews/video-mason.jpg" alt="Mason video review" />
+              <svg class="rcard__muted" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z"/></svg>
+              <div class="rcard__body"><svg class="rcard__play" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM252.3 211.1C244.7 215.3 240 223.4 240 232L240 408C240 416.7 244.7 424.7 252.3 428.9C259.9 433.1 269.1 433 276.6 428.4L420.6 340.4C427.7 336 432.1 328.3 432.1 319.9C432.1 311.5 427.7 303.8 420.6 299.4L276.6 211.4C269.2 206.9 259.9 206.7 252.3 210.9z"/></svg></div>
+              <div class="rcard__who"><div class="rcard__nm">Mason</div><div class="rcard__vb"><svg viewBox="0 0 640 640" fill="currentColor" aria-hidden="true"><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>Verified Buyer</div></div>
             </article>
 
           </div>
@@ -530,76 +540,6 @@
       <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
     </section>
 
-    <!-- ===== Cross-sell: more birthday deals ===== -->
-    <section class="crosssell">
-      <div class="crosssell__sky">
-        <h2 class="crosssell__heading">More Birthday <br />Deals to Shop</h2>
-      </div>
-      <div class="crosssell__deals">
-        <div class="crosssell__callout">
-          <img class="crosssell__badge" src="../assets/images/badge-servings.webp" alt="15 serving bags" />
-          <span class="crosssell__offer">
-            <span class="crosssell__pct">20% OFF</span>
-            <span class="crosssell__label">Protein Powder</span>
-          </span>
-        </div>
-        <p class="crosssell__tagline">Stock up on fan-favorite flavors while the sale lasts!</p>
-        <div class="carousel" data-carousel data-carousel-static-desktop>
-          <div class="carousel__viewport">
-            <div class="carousel__track">
-
-              <article class="pcard">
-                <img class="pcard__img" src="../assets/images/products/peaches-and-cream.webp" alt="Peaches and Cream Protein Powder" />
-                <h3 class="pcard__name">Peaches and Cream</h3>
-                <p class="pcard__type">Protein Powder</p>
-                <p class="pcard__meta">
-                  <span class="pcard__was">$49.99</span>
-                  <span class="pcard__price">$39.99</span>
-                  <span>15 Servings</span>
-                </p>
-                <button class="btn-add btn-add--block" type="button" data-crosssell>
-                  <span class="btn-add__label">Add to Cart</span>
-                </button>
-              </article>
-
-              <article class="pcard">
-                <img class="pcard__img" src="../assets/images/products/tropical-paradise.webp" alt="Tropical Paradise Protein Powder" />
-                <h3 class="pcard__name">Tropical Paradise</h3>
-                <p class="pcard__type">Protein Powder</p>
-                <p class="pcard__meta">
-                  <span class="pcard__was">$49.99</span>
-                  <span class="pcard__price">$39.99</span>
-                  <span>15 Servings</span>
-                </p>
-                <button class="btn-add btn-add--block" type="button" data-crosssell>
-                  <span class="btn-add__label">Add to Cart</span>
-                </button>
-              </article>
-
-              <article class="pcard">
-                <img class="pcard__img" src="../assets/images/products/neapolitan.webp" alt="Neapolitan Protein Powder" />
-                <h3 class="pcard__name">Neapolitan</h3>
-                <p class="pcard__type">Protein Powder</p>
-                <p class="pcard__meta">
-                  <span class="pcard__was">$49.99</span>
-                  <span class="pcard__price">$39.99</span>
-                  <span>15 Servings</span>
-                </p>
-                <button class="btn-add btn-add--block" type="button" data-crosssell>
-                  <span class="btn-add__label">Add to Cart</span>
-                </button>
-              </article>
-
-            </div>
-          </div>
-        </div>
-        <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__cols">
@@ -740,6 +680,8 @@
   <script src="../js/app.js" defer></script>
   <script src="../js/subscribe.js" defer></script>
   <script src="../js/hero-parallax.js" defer></script>
+  <script src="../js/cursor-trail.js" defer></script>
+  <script src="../js/countdown.js" defer></script>
 
   <!-- view-mode toggle: overlay the live mobile page (/) in an iframe -->
   <script>

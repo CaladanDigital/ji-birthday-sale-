@@ -64,7 +64,7 @@
    ============================================================ */
 
 .bundles {
-  background: var(--grad-birthday-soft);
+  background: var(--color-cream);
   padding: 40px 0 44px;
 }
 
@@ -98,10 +98,10 @@
 .bundle-card {
   position: relative;
   flex: 0 0 268px;
-  background: var(--color-white);
+  background: var(--color-tan);
   border-radius: 16px;
   padding: 16px 16px 18px;
-  box-shadow: 0 8px 24px rgba(180, 20, 70, 0.10);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   scroll-snap-align: center;
@@ -126,7 +126,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
-  background: var(--grad-birthday-soft);
+  background: var(--color-cream);
   border-radius: 12px;
   padding: 12px 10px;
   margin-bottom: 14px;
@@ -264,4 +264,305 @@
   .icon-btn--cart.cart-bump {
     animation: none;
   }
+}
+
+/* ---- Birthday cake cursor trail ---- */
+.cake-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* center the cake on the cursor tip rather than its top-left corner */
+  margin: -16px 0 0 -16px;
+  z-index: 9999;
+  font-size: 26px;
+  line-height: 1;
+  pointer-events: none;   /* never intercept clicks/hover */
+  will-change: transform;
+  opacity: 0;             /* hidden until the first mousemove reveals it */
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.cake-cursor.is-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cake-cursor {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Announcement-bar countdown clock
+   ------------------------------------------------------------
+   Lives inside .announce__text, which already supplies the
+   uppercase / letter-spaced / white-on-ink treatment
+   (css/sections.css). We just lay the label + unit group out
+   on one centered line and emphasize the numerals.
+   ============================================================ */
+.announce__text[data-countdown] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px 10px;
+}
+
+.announce__label {
+  white-space: nowrap;
+}
+
+.countdown {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.countdown__unit {
+  white-space: nowrap;
+}
+
+.countdown__unit b {
+  font-weight: var(--weight-bold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+/* Visually hidden but available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (pointer: coarse) {
+  .cake-cursor {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Founder story — centered portrait, then headline + body copy
+   ============================================================ */
+.founder {
+  background: var(--color-cream);
+  /* no side padding on mobile so the portrait can bleed edge-to-edge */
+  padding: 0 0 48px;
+}
+
+.founder__inner {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Mobile: full-bleed portrait, flush to the frame, square corners */
+.founder__image {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
+.founder__title {
+  margin-top: 26px;
+  padding: 0 16px;
+  font-size: 30px;
+  color: var(--color-ink);
+}
+
+.founder__text {
+  margin-top: 14px;
+  padding: 0 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+@media (min-width: 900px) {
+  .founder {
+    padding: 64px 24px 72px;
+  }
+
+  /* Two columns: portrait on the left, headline + body on the right */
+  .founder__inner {
+    max-width: 1040px;
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    text-align: left;
+  }
+
+  .founder__image {
+    flex: 0 0 auto;
+    width: 400px;
+    max-width: 42%;
+    margin: 0;
+    /* subtle rounding on desktop (down from the old 18px) */
+    border-radius: 10px;
+  }
+
+  .founder__body {
+    flex: 1;
+  }
+
+  .founder__title {
+    margin-top: 0;
+    padding: 0;
+    font-size: 40px;
+  }
+
+  .founder__text {
+    margin-top: 18px;
+    padding: 0;
+    max-width: none;
+  }
+}
+
+/* ============================================================
+   Scrolling "Birthday Sale" marquee
+   (sits between Best Sellers and the Founder story)
+   Two identical groups translate -50% for a seamless loop.
+   ============================================================ */
+.marquee {
+  overflow: hidden;
+  background: var(--color-cream);
+  padding: 16px 0;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  flex: none;
+}
+
+.marquee__img {
+  height: 50px;
+  width: auto;
+  flex: none;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (min-width: 900px) {
+  .marquee {
+    padding: 22px 0;
+  }
+
+  .marquee__img {
+    height: 68px;
+  }
+}
+
+/* pause the loop for visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Flavors You Crave — promo banner + new-flavors carousel
+   ============================================================ */
+.flavors {
+  background: var(--color-cream);
+  padding: 8px 16px 26px;
+}
+
+/* banner: inset from the edges with a soft rounded frame */
+.flavors__banner {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: 0 auto 4px;
+  border-radius: 16px;
+}
+
+@media (min-width: 900px) {
+  .flavors {
+    padding: 16px 24px 34px;
+  }
+
+  .flavors__banner {
+    max-width: 620px;
+    border-radius: 20px;
+  }
+}
+
+/* energy section: a scrollable carousel (cards can run off the page edge)
+   with roomier cards so the tall cans don't feel squished */
+#flavors .pcard {
+  flex: 0 0 210px;
+}
+
+/* heading + body pitch under each new-product banner */
+.flavors__copy {
+  max-width: 640px;
+  margin: 6px auto 2px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.flavors__copy h3 {
+  font-size: 26px;
+  color: var(--color-ink);
+}
+
+.flavors__copy p {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+@media (min-width: 900px) {
+  .flavors__copy {
+    margin-top: 12px;
+  }
+
+  .flavors__copy h3 {
+    font-size: 32px;
+  }
+
+  .flavors__copy p {
+    font-size: 16px;
+  }
+}
+
+/* static layout for the small new-flavor sets (2 microgreens, 3 energy) —
+   all cards shown at once, centered, no carousel */
+.flavors__pair {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.flavors__pair .pcard {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 240px;
+  scroll-snap-align: none;
 }

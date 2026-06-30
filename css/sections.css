@@ -694,7 +694,7 @@
   gap: 9px;
   height: 38px;
   padding: 0 18px;
-  background: #75d1f4;
+  background: var(--color-blue);
   color: var(--color-ink);
   border-radius: var(--radius-button);
   box-shadow: var(--shadow-sticky);
@@ -726,7 +726,7 @@
 }
 
 .btn-add.is-again {
-  background: #b7e6f7;
+  background: var(--color-blue-soft);
 }
 
 .btn-add.is-added {
@@ -790,13 +790,20 @@
 }
 
 .carousel-section--electrolytes {
-  --pcard-bg: #f6927d;
-  background: linear-gradient(180deg, #f7aba8 0%, #f9b79f 100%);
+  background: var(--color-cream);
 }
 
 .carousel-section--sparkling {
-  --pcard-bg: #fcb85c;
-  background: linear-gradient(180deg, #fbc691 0%, #fccc8d 100%);
+  background: var(--color-cream);
+}
+
+/* Best Sellers: tan cards on the shared cream page background */
+.carousel-section--bestsellers {
+  background: var(--color-cream);
+}
+
+.carousel-section--bestsellers .pcard {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .carousel {
@@ -845,8 +852,9 @@
   align-items: center;
   text-align: center;
   padding: 16px 12px;
-  background: var(--pcard-bg, var(--color-white));
+  background: var(--color-tan);
   border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .pcard__badge {
@@ -981,7 +989,7 @@
 
 .faq {
   --faq-overlap: 34px;
-  background: #cfe6f4 url('../assets/images/hero-sky.jpg') center / cover;
+  background: var(--color-cream);
   padding: 30px 16px 38px;
 }
 
@@ -1026,11 +1034,11 @@
   padding-bottom: 0;
 }
 
-.faq-item--red    { background: #ff563f; }
-.faq-item--pink   { background: #f27893; }
-.faq-item--orange { background: #fcb85c; }
-.faq-item--green  { background: #6fd08c; }
-.faq-item--blue   { background: #75d1f4; }
+.faq-item--red,
+.faq-item--pink,
+.faq-item--orange,
+.faq-item--green,
+.faq-item--blue   { background: var(--color-tan); }
 
 .faq-item__header {
   position: relative;
@@ -1134,8 +1142,106 @@
    ============================================================ */
 
 .social-proof {
-  background: linear-gradient(180deg, #f9b5a1 0%, #fbc196 100%);
+  background: var(--color-cream);
   scroll-margin-top: calc(var(--header-h) + 170px);
+}
+
+/* video-review cards (ported from the PDP "Customer Reviews" section) */
+.rcard {
+  position: relative;
+  flex: 0 0 190px;
+  scroll-snap-align: center;
+  min-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-tan);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.rcard__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* scrim so the name stays readable over the photo */
+.rcard::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rcard__muted {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 17px;
+  height: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+
+.rcard__body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.rcard__play {
+  width: 50px;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.82);
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.rcard:hover .rcard__play {
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.rcard__who {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rcard__nm {
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  color: #fff;
+}
+
+.rcard__vb {
+  font-size: 10px;
+  color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rcard__vb svg {
+  width: 11px;
+  height: 11px;
+  color: #fff;
 }
 
 .review {
@@ -1223,15 +1329,17 @@
     font-size: 13px;
   }
 
-  /* carousels flagged static-on-desktop become a centered row, no loop */
+  /* carousels flagged static-on-desktop stay a single centered row;
+     if the cards are wider than the viewport they scroll horizontally
+     rather than wrapping into stacked rows */
   [data-carousel-static-desktop] .carousel__viewport {
-    overflow: hidden;
+    overflow-x: auto;
   }
 
   [data-carousel-static-desktop] .carousel__track {
-    width: auto;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: max-content;
+    margin-inline: auto;
+    flex-wrap: nowrap;
   }
 }
 
@@ -1240,7 +1348,7 @@
    ============================================================ */
 
 .crosssell__sky {
-  background: #cfe6f4 url('../assets/images/bg-sky.jpg') center / cover;
+  background: var(--color-cream);
   text-align: center;
   padding: 36px 16px;
 }
@@ -1252,9 +1360,8 @@
 }
 
 .crosssell__deals {
-  --pcard-bg: rgba(255, 255, 255, 0.3);
   padding-bottom: 64px;
-  background: linear-gradient(180deg, #f27893 0%, #f6a7aa 100%);
+  background: var(--color-cream);
 }
 
 .crosssell__callout {
@@ -1498,16 +1605,8 @@
     min-width: 0;
   }
 
-  .hero { order: 1; }
-  .bundle { order: 2; }
-  .carousel-section--electrolytes { order: 3; }
-  .best-sellers { order: 4; }
-  .featured--peach { order: 5; }
-  .featured--grape { order: 6; }
-  .carousel-section--sparkling { order: 7; }
-  .faq { order: 8; }
-  .social-proof { order: 9; }
-  .crosssell { order: 10; }
+  /* Sections render in document source order (no explicit flex order) so
+     the footer always stays last. The old reorder scheme was vestigial. */
 
   /* the Best Sellers header and the two featured products read as one
      section, so they share a single background */

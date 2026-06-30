@@ -25,6 +25,7 @@ js/
   app.js            nav drawer, accordions, footer, --header-h sync
   subscribe.js      NEW: per-bundle One-Time / Subscribe lock-in toggle
   hero-parallax.js  NEW: confetti layer falls out of sync on scroll
+  cursor-trail.js   NEW: 🎂 emoji eases after the mouse (desktop/mouse only)
 assets/images/      product art, reviews, badges, hero-confetti.svg
 desktop/
   index.html        desktop layout + the "View Mobile" iframe toggle

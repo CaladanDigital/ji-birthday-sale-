@@ -19,6 +19,16 @@
   --color-muted: rgba(0, 0, 0, 0.57);   /* secondary copy */
   --color-hairline: rgba(0, 0, 0, 0.12);
 
+  /* ---- Tan neutral theme ----
+     --color-cream is the page background used throughout; --color-tan is
+     the slightly darker secondary surface used for product/bundle cards. */
+  --color-cream: #fffbf3;         /* off-white page background */
+  --color-tan: #f4e9d3;           /* secondary surface (cards) */
+
+  /* ---- Button blue ---- */
+  --color-blue: #7bdced;          /* primary CTA buttons (Add to Cart) */
+  --color-blue-soft: #b6ecf5;     /* lighter "added / add another" state */
+
   /* ---- Birthday palette (sampled from the provided banner art) ---- */
   --color-magenta: #ec1066;       /* deep top of the banner gradient */
   --color-pink: #f4538f;          /* mid pink, CTAs / "lock in" badge */
