@@ -1,23 +1,24 @@
 /* ============================================================
-   Birthday cake cursor trail
+   "5 Years of Protein" badge cursor trail
 
-   A single 🎂 that eases toward the mouse with a gentle lag, so it
+   A single badge (CSS background-image) that eases toward the mouse
+   with a gentle lag, so it
    reads as playfully chasing the pointer. One fixed-position element,
    transform-only, GPU-composited - cheap.
 
-   Bails out entirely (no element ever created) inside the View-Mobile
-   iframe, under prefers-reduced-motion, and on coarse/touch pointers.
+   Bails out entirely (no element ever created) under
+   prefers-reduced-motion and on coarse/touch pointers.
    The rAF loop pauses while the tab is hidden.
+
+   Also runs inside the desktop "View Mobile" iframe: the iframe swallows
+   mousemove, so the outer page's badge can't follow the cursor in there -
+   this instance takes over (the outer badge is hidden via
+   body.mobile-active in desktop.css).
    ============================================================ */
 
 'use strict';
 
 (function () {
-  /* Don't run inside the desktop "View Mobile" iframe - the outer page
-     already has its own cake; a second one here would double up. */
-  if (window.top !== window.self) {
-    return;
-  }
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return;
   }
@@ -31,7 +32,6 @@
   var cake = document.createElement('div');
   cake.className = 'cake-cursor';
   cake.setAttribute('aria-hidden', 'true');
-  cake.textContent = '🎂';
   document.body.appendChild(cake);
 
   var mx = 0, my = 0;   /* target: where the mouse is */
@@ -63,11 +63,12 @@
     mx = e.clientX;
     my = e.clientY;
     if (!started) {
-      /* Drop the cake on the cursor for its first frame so it doesn't
-         streak in from the top-left corner. */
+      /* Drop the badge on the cursor immediately (not waiting for the
+         first rAF) so it doesn't streak in from the top-left corner. */
       started = true;
       cx = mx;
       cy = my;
+      cake.style.transform = 'translate3d(' + cx + 'px, ' + cy + 'px, 0)';
       cake.classList.add('is-visible');
     }
     tick();

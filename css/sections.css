@@ -599,7 +599,7 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 9px;
 }
 
 .featured__badge {
@@ -693,12 +693,14 @@
   align-items: center;
   gap: 9px;
   height: 38px;
-  padding: 0 18px;
+  /* Lucky Fish rides high in its em-box; top-only padding (border-box,
+     fixed height) nudges the flex-centered label back to optical center. */
+  padding: 2px 18px 0;
   background: var(--color-blue);
   color: var(--color-ink);
   border-radius: var(--radius-button);
   box-shadow: var(--shadow-sticky);
-  font-size: 13px;
+  font-size: 16px;
   transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out),
               opacity 160ms var(--ease-out);
 }
@@ -771,7 +773,7 @@
 }
 
 .section-head__title {
-  font-size: 30px;
+  font-size: 34px;
   color: var(--color-ink);
 }
 
@@ -853,7 +855,7 @@
   text-align: center;
   padding: 16px 12px;
   background: var(--color-tan);
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
@@ -874,9 +876,8 @@
 }
 
 .pcard__name {
-  margin-top: 8px;
-  min-height: 2.2em;
-  font-size: 17px;
+  margin-top: 10px;
+  font-size: 22px;
   color: var(--color-ink);
 }
 
@@ -927,7 +928,7 @@
   }
 
   .section-head__title {
-    font-size: 40px;
+    font-size: 48px;
   }
 
   .carousel__track {
@@ -946,7 +947,7 @@
   }
 
   .pcard__name {
-    font-size: 19px;
+    font-size: 24px;
   }
 }
 /* ---- subtle hover + press feedback on buttons ---- */
@@ -1019,7 +1020,7 @@
 
 .faq-item {
   position: relative;
-  border-radius: 18px;
+  border-radius: 11px;
   padding-bottom: var(--faq-overlap);
   box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
   transition: filter 140ms var(--ease-out);
@@ -1053,7 +1054,7 @@
 
 .faq-item__title {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-variation-settings: 'SOFT' 100, 'WONK' 0;
   font-size: 18px;
   line-height: 1.15;
@@ -1152,7 +1153,7 @@
   flex: 0 0 190px;
   scroll-snap-align: center;
   min-height: 300px;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--color-tan);
   display: flex;
@@ -1249,7 +1250,7 @@
   flex: 0 0 250px;
   height: 460px;
   scroll-snap-align: center;
-  border-radius: 14px;
+  border-radius: 9px;
   overflow: hidden;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
 }
@@ -1303,7 +1304,7 @@
 .review__headline {
   margin: 5px 0 4px;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-variation-settings: 'SOFT' 100, 'WONK' 0;
   font-size: 15px;
   text-transform: uppercase;
@@ -1386,7 +1387,7 @@
 
 .crosssell__pct {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-variation-settings: 'SOFT' 100, 'WONK' 0;
   font-size: 36px;
   line-height: 0.95;
@@ -1395,7 +1396,7 @@
 
 .crosssell__label {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-variation-settings: 'SOFT' 100, 'WONK' 0;
   font-size: 21px;
   line-height: 1.05;

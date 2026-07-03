@@ -37,9 +37,10 @@
   --grad-birthday-soft: linear-gradient(180deg, #fbd9e2 0%, #fdeef1 100%);
 
   /* ---- Typography ---- */
-  /* Fraunces (Google Fonts) for display headlines, Josefin Sans for body.
-     Headlines render Extra Bold (800) with the SOFT axis at 100 - see base.css. */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  /* Josefin Sans everywhere: bold (700) + uppercase for display headlines,
+     product titles, and buttons; regular for body. (Lucky Fish retired —
+     files still in assets/fonts if we pivot back.) */
+  --font-display: 'Josefin Sans', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Josefin Sans', 'Helvetica Neue', Arial, sans-serif;
 
   --weight-body: 400;

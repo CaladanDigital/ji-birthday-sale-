@@ -7,10 +7,10 @@
   <meta name="description" content="Our biggest sale of the year. 20% off sitewide, including subscriptions — lock in 20% for life. Shop Karalyn's favorite preset bundles. July 21–27." />
   <link rel="icon" href="assets/images/favicon.svg" />
 
-  <!-- Fonts: Fraunces (display) + Josefin Sans (body) from the brand system -->
+  <!-- Fonts: Lucky Fish (display/buttons, local @font-face in base.css) + Josefin Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Josefin+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" />
 
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
@@ -134,7 +134,10 @@
     <section class="carousel-section carousel-section--bestsellers" id="bestsellers" aria-label="Best sellers">
       <header class="section-head">
         <h2 class="section-head__title">Best Sellers</h2>
-        <p class="section-head__sub">Our most-loved picks — 20% off for the Birthday Sale.</p>
+        <div class="section-head__tags">
+          <span class="deal-tag">20% Off Sitewide</span>
+          <span class="deal-tag deal-tag--sub">Subscriptions Lock In 20% For The Year</span>
+        </div>
       </header>
       <div class="carousel" data-carousel data-carousel-static-desktop>
         <div class="carousel__viewport">
@@ -259,18 +262,48 @@
              alt="Karalynne Call, founder of Just Ingredients" />
         <div class="founder__body">
           <h2 class="founder__title">Celebrating Five Years</h2>
-          <p class="founder__text">It started with Karalynne Call, a mom of six who couldn't find clean products she trusted, so she made her own. No unnecessary fillers, no shortcuts, just real ingredients made for daily life. That choice grew into a community of over a million people who wanted the same thing. Five years later, real ingredients are still the whole point.</p>
+          <p class="founder__text">&ldquo;Thank you for celebrating five years of real ingredients with us! We&rsquo;re honored to be part of your health journey, and we can&rsquo;t wait to celebrate another year together!&rdquo;</p>
+          <a class="founder__cta" href="#">Learn More</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== Flavors You Crave (new Energy + Brain Boost line) ===== -->
-    <section class="flavors" id="flavors" aria-label="New flavors you crave">
-      <img class="flavors__banner" src="assets/images/flavors-crave.png"
-           alt="Flavors You Crave — finally, an energy drink that works with your body" />
+    <!-- ===== Scrolling "20% Off Sitewide" marquee ===== -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+        </div>
+        <div class="marquee__group">
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/off-sitewide-text.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Flavors You Crave (On-The-Go Drinks: new Energy + Brain Boost line + existing RTDs) ===== -->
+    <section class="flavors" id="flavors" aria-label="On-the-go drinks">
+      <picture>
+        <source media="(min-width: 900px)" srcset="assets/images/flavors-crave-wide.png" />
+        <img class="flavors__banner" src="assets/images/flavors-crave.png"
+             alt="Flavors You Crave — finally, an energy drink that works with your body" />
+      </picture>
       <div class="flavors__copy">
-        <h3>Energy Drink</h3>
-        <p>An energy drink that works with your body. 100mg clean caffeine, mood-balancing adaptogens, and real fruit flavor, with no artificial dyes or added sugar.</p>
+        <h3>On-The-Go Drinks</h3>
+        <p>Real-food refreshment, ready when you are. From clean energy with 100mg of caffeine to sparkling hydration — real fruit flavor, no artificial dyes or added sugar.</p>
       </div>
 
       <div class="carousel" data-carousel>
@@ -328,19 +361,110 @@
           </button>
         </article>
 
+        <article class="pcard" data-product-card>
+          <img class="pcard__img" data-product-img src="assets/images/sparkling-grape-soda.webp" alt="Grape Soda" />
+          <h3 class="pcard__name">Grape Soda</h3>
+          <p class="pcard__type">Sparkling Electrolytes</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$29.99</span>
+            <span class="pcard__price">$23.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="sparkling-grape" data-name="Grape Soda Sparkling"
+                  data-image="assets/images/sparkling-grape-soda.webp">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__img" data-product-img src="assets/images/sparkling-orange-fizz.webp" alt="Orange Fizz" />
+          <h3 class="pcard__name">Orange Fizz</h3>
+          <p class="pcard__type">Sparkling Electrolytes</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$29.99</span>
+            <span class="pcard__price">$23.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="sparkling-orange-fizz" data-name="Orange Fizz Sparkling"
+                  data-image="assets/images/sparkling-orange-fizz.webp">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__img" data-product-img src="assets/images/sparkling-lemonade.webp" alt="Lemonade" />
+          <h3 class="pcard__name">Lemonade</h3>
+          <p class="pcard__type">Sparkling Electrolytes</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$29.99</span>
+            <span class="pcard__price">$23.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="sparkling-lemonade" data-name="Lemonade Sparkling"
+                  data-image="assets/images/sparkling-lemonade.webp">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
+        <article class="pcard" data-product-card>
+          <img class="pcard__img" data-product-img src="assets/images/sparkling-strawberry-lemonade.webp" alt="Strawberry Lemonade" />
+          <h3 class="pcard__name">Strawberry Lemonade</h3>
+          <p class="pcard__type">Sparkling Electrolytes</p>
+          <p class="pcard__meta">
+            <span class="pcard__was">$29.99</span>
+            <span class="pcard__price">$23.99</span>
+            <span>12-Pack</span>
+          </p>
+          <button class="btn-add btn-add--block" type="button" data-add-to-cart
+                  data-id="sparkling-strawberry" data-name="Strawberry Lemonade Sparkling"
+                  data-image="assets/images/sparkling-strawberry-lemonade.webp">
+            <span class="btn-add__label">Add to Cart</span>
+          </button>
+        </article>
+
       </div>
         </div>
       </div>
       <p class="carousel__hint" aria-hidden="true">&lsaquo; Swipe &rsaquo;</p>
     </section>
 
+    <!-- ===== Scrolling "New Microgreens" marquee ===== -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+        </div>
+        <div class="marquee__group">
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+          <img class="marquee__img" src="assets/images/new-microgreens-text.png" alt="" />
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Drink Your Vitamins (new Microgreens Drink line) ===== -->
     <section class="flavors" id="vitamins" aria-label="New microgreens drinks">
       <img class="flavors__banner" src="assets/images/drink-your-vitamins.png"
            alt="Drink Your Vitamins — a refreshing daily greens drink made with real fruit and microgreens" />
+      <div class="flavors__side">
       <div class="flavors__copy">
+        <span class="flavors__tag">New Category</span>
         <h3>Microgreens</h3>
-        <p>A refreshing daily greens drink made with real fruit and locally grown microgreens. One scoop delivers 100% of your B vitamins for the day, with more concentrated nutrition than mature vegetables.</p>
       </div>
 
       <div class="flavors__pair">
@@ -380,12 +504,16 @@
         </article>
 
       </div>
+      </div>
     </section>
 
     <!-- ===== Sweet Tooth Satisfied (new Protein Smoothie Mix line) ===== -->
     <section class="flavors" id="smoothies" aria-label="New protein smoothie mix">
-      <img class="flavors__banner" src="assets/images/sweet-tooth.png"
-           alt="Sweet Tooth Satisfied — new protein smoothie mix" />
+      <picture>
+        <source media="(min-width: 900px)" srcset="assets/images/sweet-tooth-wide.png" />
+        <img class="flavors__banner" src="assets/images/sweet-tooth.png"
+             alt="Sweet Tooth Satisfied — new protein smoothie mix" />
+      </picture>
       <div class="flavors__copy">
         <h3>Protein Powder</h3>
         <p>The flavors you crave, without the cheat-day math. A grass-fed whey blend flavored with real food, never artificial flavors, sucralose, or fillers.</p>

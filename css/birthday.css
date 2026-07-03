@@ -99,7 +99,7 @@
   position: relative;
   flex: 0 0 268px;
   background: var(--color-tan);
-  border-radius: 16px;
+  border-radius: 10px;
   padding: 16px 16px 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -127,7 +127,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   background: var(--color-cream);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 12px 10px;
   margin-bottom: 14px;
 }
@@ -266,16 +266,17 @@
   }
 }
 
-/* ---- Birthday cake cursor trail ---- */
+/* ---- "5 Years of Protein" badge cursor trail ---- */
 .cake-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  /* center the cake on the cursor tip rather than its top-left corner */
-  margin: -16px 0 0 -16px;
+  /* center the badge on the cursor tip rather than its top-left corner */
+  margin: -28px 0 0 -28px;
   z-index: 9999;
-  font-size: 26px;
-  line-height: 1;
+  width: 56px;
+  height: 56px;
+  background: url('../assets/images/badge-5-years.webp') center / contain no-repeat;
   pointer-events: none;   /* never intercept clicks/hover */
   will-change: transform;
   opacity: 0;             /* hidden until the first mousemove reveals it */
@@ -374,7 +375,7 @@
 .founder__title {
   margin-top: 26px;
   padding: 0 16px;
-  font-size: 30px;
+  font-size: 34px;
   color: var(--color-ink);
 }
 
@@ -387,6 +388,31 @@
   font-size: 15px;
   line-height: 1.6;
   color: var(--color-muted);
+}
+
+/* Learn More CTA — pink pulls the portrait's palette across into the copy
+   column so the two sides feel weighted evenly */
+.founder__cta {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 2px 30px 0; /* same optical-center nudge as .btn-add */
+  margin-top: 24px;
+  background: var(--color-pink);
+  color: #fff;
+  border-radius: var(--radius-button);
+  box-shadow: var(--shadow-sticky);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+
+.founder__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.22);
 }
 
 @media (min-width: 900px) {
@@ -409,7 +435,7 @@
     max-width: 42%;
     margin: 0;
     /* subtle rounding on desktop (down from the old 18px) */
-    border-radius: 10px;
+    border-radius: 7px;
   }
 
   .founder__body {
@@ -419,7 +445,7 @@
   .founder__title {
     margin-top: 0;
     padding: 0;
-    font-size: 40px;
+    font-size: 46px;
   }
 
   .founder__text {
@@ -497,7 +523,7 @@
   max-width: 560px;
   height: auto;
   margin: 0 auto 4px;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 @media (min-width: 900px) {
@@ -507,7 +533,13 @@
 
   .flavors__banner {
     max-width: 620px;
-    border-radius: 20px;
+    border-radius: 12px;
+  }
+
+  /* Energy + Sweet Tooth: wide desktop banner spans the content column */
+  #flavors .flavors__banner,
+  #smoothies .flavors__banner {
+    max-width: 1200px;
   }
 }
 
@@ -520,14 +552,58 @@
 /* heading + body pitch under each new-product banner */
 .flavors__copy {
   max-width: 640px;
-  margin: 6px auto 2px;
+  margin: 16px auto 2px;
   padding: 0 16px;
   text-align: center;
 }
 
 .flavors__copy h3 {
-  font-size: 26px;
+  font-size: 30px;
   color: var(--color-ink);
+}
+
+/* Deal tags under the Best Sellers title — the two sale hooks:
+   20% sitewide + subscriptions locked in at 20% for the year */
+.section-head__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 0 16px;
+}
+
+.deal-tag {
+  display: inline-block;
+  padding: 6px 15px 5px;
+  background: var(--color-pink);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* the year-long subscription lock-in is the best deal of the year —
+   deeper magenta so it reads as the headliner of the two */
+.deal-tag--sub {
+  background: var(--color-magenta);
+}
+
+/* "New Category" eyebrow tag — replaces body copy where the banner art
+   already carries the product pitch */
+.flavors__tag {
+  display: inline-block;
+  padding: 5px 14px 4px;
+  margin-bottom: 10px;
+  background: var(--color-pink);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .flavors__copy p {
@@ -539,11 +615,11 @@
 
 @media (min-width: 900px) {
   .flavors__copy {
-    margin-top: 12px;
+    margin-top: 22px;
   }
 
   .flavors__copy h3 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .flavors__copy p {
@@ -565,4 +641,41 @@
   min-width: 0;
   max-width: 240px;
   scroll-snap-align: none;
+}
+
+/* Microgreens (only 2 products): space-efficient two-column desktop layout —
+   square banner photo on the left, copy + the two cards stacked on the right.
+   Mirrors the founder two-column pattern. Mobile stays stacked. */
+@media (min-width: 900px) {
+  #vitamins {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  #vitamins .flavors__banner {
+    flex: 0 0 48%;
+    max-width: 48%;
+    margin: 0;
+  }
+
+  #vitamins .flavors__side {
+    flex: 1;
+  }
+
+  #vitamins .flavors__copy {
+    text-align: left;
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  #vitamins .flavors__pair {
+    justify-content: flex-start;
+    padding: 16px 0 0;
+  }
 }

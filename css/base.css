@@ -2,6 +2,31 @@
    Base - reset and global typography
    ============================================================ */
 
+/* Lucky Fish - display headline face (local, from assets/fonts).
+   Non-round cuts used; Round variants also shipped in assets/fonts if
+   we want the softer look. Weights map Regular 400 / Medium 500 / Heavy 800. */
+@font-face {
+  font-family: 'Lucky Fish';
+  src: url('../assets/fonts/LuckyFish-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lucky Fish';
+  src: url('../assets/fonts/LuckyFish-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lucky Fish';
+  src: url('../assets/fonts/LuckyFish-Heavy.otf') format('opentype');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -33,7 +58,9 @@ picture {
 }
 
 button {
-  font-family: inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
   border: none;
   background: none;
@@ -48,14 +75,13 @@ ul {
   list-style: none;
 }
 
-/* Display headlines - Fraunces Extra Bold, SOFT axis at 100 */
+/* Display headlines - Josefin Sans bold, title case */
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-optical-sizing: auto;
-  font-variation-settings: 'SOFT' 100, 'WONK' 0;
+  font-weight: 700;
+  text-transform: capitalize;
   line-height: 1.1;
 }
 
