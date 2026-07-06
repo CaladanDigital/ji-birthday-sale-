@@ -51,13 +51,9 @@
   will-change: transform;
 }
 
-/* --- desktop (>=900px): wide banner, hide the separate confetti layer.
-   900px matches the SIS desktop breakpoint + carousel.js static threshold. --- */
-@media (min-width: 900px) {
-  .hero-banner__confetti {
-    display: none;
-  }
-}
+/* --- desktop (>=900px): the wide banner is also confetti-free art with
+   its own transparent confetti layer (hero-confetti-desktop.png via
+   <picture>), so the parallax falls on every viewport. --- */
 
 /* ============================================================
    2. "Karalyn's Favorites" preset bundle picker

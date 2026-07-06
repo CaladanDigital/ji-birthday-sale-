@@ -1,12 +1,12 @@
 /* ============================================================
-   Hero confetti parallax (mobile)
+   Hero confetti parallax
 
    #heroBanner has the banner image and a confetti overlay
-   (.hero-banner__confetti) sized a little larger than the hero so it has
-   room to travel. The banner stays put; on scroll the confetti is
-   translated DOWN, so relative to the banner it drifts downward and reads
-   as gently falling. The overlay is hidden at >=900px (the desktop banner
-   has confetti baked in), so this is effectively a mobile effect.
+   (.hero-banner__confetti). The banner stays put; on scroll the confetti
+   is translated DOWN, so relative to the banner it drifts downward and
+   reads as gently falling. Both breakpoints now ship confetti-free banner
+   art with a separate confetti layer (mobile + desktop via <picture>), so
+   the effect runs everywhere.
 
    rAF-throttled transform (not background-attachment: fixed, which janks
    on iOS - and mobile is the priority). Fully disabled under
