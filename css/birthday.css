@@ -578,10 +578,19 @@
   background: var(--color-pink);
   color: #fff;
   border-radius: 999px;
-  font-size: 12px;
+  /* pills never wrap internally; the flex row wraps whole pills instead.
+     11px keeps the long subscription pill to one line on small phones */
+  white-space: nowrap;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  .deal-tag {
+    font-size: 12px;
+  }
 }
 
 /* the year-long subscription lock-in is the best deal of the year —
