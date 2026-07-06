@@ -879,7 +879,7 @@
 
 .pcard__name {
   margin-top: 10px;
-  font-size: 22px;
+  font-size: 20px;
   color: var(--color-ink);
 }
 
@@ -910,6 +910,12 @@
 
 .pcard__price {
   font-weight: var(--weight-semibold);
+}
+
+/* servings / pack size sits on its own line under the price — fills the
+   vertical slack in short cards instead of leaving a gap above the ATC */
+.pcard__meta > span:last-child {
+  flex-basis: 100%;
 }
 
 .btn-add--block {
@@ -949,7 +955,7 @@
   }
 
   .pcard__name {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 /* ---- subtle hover + press feedback on buttons ---- */
