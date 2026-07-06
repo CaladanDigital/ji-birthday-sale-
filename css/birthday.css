@@ -390,14 +390,13 @@
 }
 
 /* Karalynne's signature under the quote (white-on-transparent export —
-   brightness(0) inks it so it reads on the cream background) */
+   brightness(0) inks it solid black so it stands out on the cream) */
 .founder__sig {
   display: block;
   height: 52px;
   width: auto;
   margin: 18px auto 0;
   filter: brightness(0);
-  opacity: 0.8;
 }
 
 /* Learn More CTA — pink pulls the portrait's palette across into the copy
