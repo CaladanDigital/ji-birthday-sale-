@@ -266,17 +266,16 @@
   }
 }
 
-/* ---- "5 Years of Protein" badge cursor trail ---- */
+/* ---- Birthday cake cursor trail ---- */
 .cake-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  /* center the badge on the cursor tip rather than its top-left corner */
-  margin: -28px 0 0 -28px;
+  /* center the cake on the cursor tip rather than its top-left corner */
+  margin: -22px 0 0 -22px;
   z-index: 9999;
-  width: 56px;
-  height: 56px;
-  background: url('../assets/images/badge-5-years.webp') center / contain no-repeat;
+  font-size: 44px;
+  line-height: 1;
   pointer-events: none;   /* never intercept clicks/hover */
   will-change: transform;
   opacity: 0;             /* hidden until the first mousemove reveals it */

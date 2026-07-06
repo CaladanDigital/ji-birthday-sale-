@@ -1,8 +1,7 @@
 /* ============================================================
-   "5 Years of Protein" badge cursor trail
+   Birthday cake cursor trail
 
-   A single badge (CSS background-image) that eases toward the mouse
-   with a gentle lag, so it
+   A single 🎂 that eases toward the mouse with a gentle lag, so it
    reads as playfully chasing the pointer. One fixed-position element,
    transform-only, GPU-composited - cheap.
 
@@ -32,6 +31,7 @@
   var cake = document.createElement('div');
   cake.className = 'cake-cursor';
   cake.setAttribute('aria-hidden', 'true');
+  cake.textContent = '🎂';
   document.body.appendChild(cake);
 
   var mx = 0, my = 0;   /* target: where the mouse is */
